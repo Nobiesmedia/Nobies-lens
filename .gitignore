@@ -1,0 +1,8 @@
+# Loose source images in root (originals are organized in assets/images/)
+/*.jpg
+/*.JPG
+/new pictures for the website/
+
+# Operating system files
+Thumbs.db
+.DS_Store
