@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nobies Lens Portfolio | Complete Photography Collections</title>
+    <meta name="description" content="Explore the complete photography portfolio of Nobies Lens. Curated editorial collections across Lifestyle, Graduations (Issahaku, Dora, Angelique, Jibril), Corporate &amp; State Events, Event Parties, and Weddings.">
+    
+    <!-- Google Fonts: Poppins (Clean, Modern & Editorial) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- CUSTOM ROUND CIRCLE MOUSE CURSOR -->
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-circle"></div>
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" aria-label="Nobies Lens Photography">
+                <img src="assets/images/nobies-lens-logo.png" alt="Nobies Lens Photography Official Logo" class="brand-logo-img">
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="portfolio.html" class="nav-link active">Portfolio</a>
+                <a href="pricing.html" class="nav-link">Price List</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Single Theme Toggle Indicator -->
+                <button class="theme-toggle-single" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Theme (Cream &amp; White / All-Black)">
+                    <span class="theme-toggle-icon"><i class="fa-solid fa-moon"></i></span>
+                    <span class="theme-toggle-label">Theme</span>
+                </button>
+
+                <div class="nav-socials">
+                    <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20inquire%20about%20a%20photoshoot" target="_blank" class="nav-social-icon whatsapp" title="Chat on WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social" target="_blank" class="nav-social-icon instagram link-instagram-direct" title="Follow Nobies Lens on Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+                <a href="index.html#contact" class="btn btn-touch btn-sm">
+                    Get in Touch <span class="btn-arrow">&#9658;</span>
+                </a>
+            </div>
+
+            <button class="hamburger-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-overlay"></div>
+    <div class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="portfolio.html" class="mobile-nav-link active">Portfolio Gallery</a>
+            <a href="pricing.html" class="mobile-nav-link">Pricing Packages</a>
+            <a href="index.html#about" class="mobile-nav-link">About Nobies Lens</a>
+            <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+        </div>
+        <div class="mobile-nav-bottom">
+            <button class="theme-toggle-single mobile-theme-toggle" id="themeToggleBtnMobile" aria-label="Toggle Theme">
+                <span class="theme-toggle-icon"><i class="fa-solid fa-moon"></i></span>
+                <span class="theme-toggle-label">Theme Mode</span>
+            </button>
+
+            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20book%20a%20photoshoot" target="_blank" class="btn btn-whatsapp btn-sm">
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- PORTFOLIO HEADER HERO -->
+    <section class="page-hero-section">
+        <div class="container text-center">
+            <div class="hero-eyebrow">EDITORIAL &bull; ARCHIVAL &bull; TIMELESS</div>
+            <h1 class="page-hero-title">The Complete Nobies Lens Portfolio</h1>
+            <p class="page-hero-subtitle">
+                Explore our comprehensive photographic archives across Lifestyle, Graduations, Corporate Galas, Event Parties, and Nuptials. Click any photograph to view in high resolution or reserve a similar session.
+            </p>
+        </div>
+    </section>
+
+    <!-- MAIN PORTFOLIO GALLERY SECTION -->
+    <section class="portfolio-section" style="padding-top: 1rem;">
+        <div class="container">
+            <!-- Filter Tabs -->
+            <div class="gallery-filter-tabs">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fa-solid fa-border-all"></i> All Works
+                </button>
+                <button class="filter-btn" data-filter="lifestyle">
+                    <i class="fa-solid fa-camera"></i> Lifestyle
+                </button>
+                <button class="filter-btn" data-filter="graduation">
+                    <i class="fa-solid fa-graduation-cap"></i> Graduations (Issahaku, Dora, Angelique, Jibril)
+                </button>
+                <button class="filter-btn" data-filter="corporate">
+                    <i class="fa-solid fa-briefcase"></i> Corporate &amp; State Events
+                </button>
+                <button class="filter-btn" data-filter="party">
+                    <i class="fa-solid fa-champagne-glasses"></i> Event Parties
+                </button>
+                <button class="filter-btn" data-filter="wedding">
+                    <i class="fa-solid fa-ring"></i> Weddings &amp; Milestones
+                </button>
+            </div>
+
+            <!-- Complete Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- 1. Lifestyle Lady in Red -->
+                <div class="gallery-item" data-category="lifestyle" data-title="The Lady in Red by the Palm Fronds" data-highres="assets/images/lifestyle for samuel.jpeg">
+                    <img src="assets/images/lifestyle for samuel.jpeg" alt="Lady in Red beside Palm Tree - Lifestyle">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Lifestyle</span>
+                        <h4 class="gallery-title">The Lady in Red by the Palm Fronds</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-camera"></i> Editorial Series</span></div>
+                    </div>
+                </div>
+
+                <!-- 2. Graduation Dora 1 -->
+                <div class="gallery-item" data-category="graduation" data-sub="dora" data-title="Academic Splendor — Graduation for Dora" data-highres="assets/images/graduation for Dora 1.jpeg">
+                    <img src="assets/images/graduation for Dora 1.jpeg" alt="Academic Distinction - Graduation for Dora">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Graduation for Dora</span>
+                        <h4 class="gallery-title">Academic Splendor</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-graduation-cap"></i> Dora Graduation</span></div>
+                    </div>
+                </div>
+
+                <!-- 3. Ambassador 1 -->
+                <div class="gallery-item landscape" data-category="corporate" data-title="Diplomatic Mission — Ambassador of Ghana to Morocco" data-highres="assets/images/ambassador of Ghana to morocco1.jpeg">
+                    <img src="assets/images/ambassador of Ghana to morocco1.jpeg" alt="Ambassador of Ghana to Morocco">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Corporate &amp; State</span>
+                        <h4 class="gallery-title">Diplomatic Mission</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-landmark"></i> Ambassador of Ghana to Morocco</span></div>
+                    </div>
+                </div>
+
+                <!-- 4. Graduation Issahaku 1 -->
+                <div class="gallery-item" data-category="graduation" data-sub="issahaku" data-title="Crowning Triumph — Graduation for Issahaku" data-highres="assets/images/graduation for issahaku.jpeg">
+                    <img src="assets/images/graduation for issahaku.jpeg" alt="Graduation for Issahaku">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Graduation for Issahaku</span>
+                        <h4 class="gallery-title">Crowning Triumph</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-award"></i> Issahaku Graduation</span></div>
+                    </div>
+                </div>
+
+                <!-- 5. Event Party 1 -->
+                <div class="gallery-item landscape" data-category="party" data-title="Celebration Lights — Event Party Series" data-highres="assets/images/event party.jpeg">
+                    <img src="assets/images/event party.jpeg" alt="Event Party Series">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Event Party</span>
+                        <h4 class="gallery-title">Celebration Lights</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-champagne-glasses"></i> Festive Night</span></div>
+                    </div>
+                </div>
+
+                <!-- 6. Graduation Angelique -->
+                <div class="gallery-item" data-category="graduation" data-sub="angelique" data-title="Elegance in Regalia — Graduation for Angelique" data-highres="assets/images/graduation for Angelique.jpeg">
+                    <img src="assets/images/graduation for Angelique.jpeg" alt="Graduation for Angelique">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Graduation for Angelique</span>
+                        <h4 class="gallery-title">Elegance in Regalia</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-graduation-cap"></i> Angelique Graduation</span></div>
+                    </div>
+                </div>
+
+                <!-- 7. Corporate Event 1 -->
+                <div class="gallery-item" data-category="corporate" data-title="Executive Leadership — Corporate Event" data-highres="assets/images/corporate event1.jpeg">
+                    <img src="assets/images/corporate event1.jpeg" alt="Corporate Summit">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Corporate Event</span>
+                        <h4 class="gallery-title">Executive Leadership</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-briefcase"></i> Keynote Coverage</span></div>
+                    </div>
+                </div>
+
+                <!-- 8. Lifestyle 3 -->
+                <div class="gallery-item" data-category="lifestyle" data-title="Crimson Silhouette — Lifestyle" data-highres="assets/images/lifestyle for samuel 3.jpeg">
+                    <img src="assets/images/lifestyle for samuel 3.jpeg" alt="Crimson Silhouette Portrait">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Lifestyle</span>
+                        <h4 class="gallery-title">Crimson Silhouette</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-sun"></i> High Fashion Portrait</span></div>
+                    </div>
+                </div>
+
+                <!-- 9. Graduation Dora 2 -->
+                <div class="gallery-item" data-category="graduation" data-sub="dora" data-title="Joy &amp; Excellence — Graduation for Dora" data-highres="assets/images/graduation for Dora 2.jpeg">
+                    <img src="assets/images/graduation for Dora 2.jpeg" alt="Graduation for Dora 2">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Graduation for Dora</span>
+                        <h4 class="gallery-title">Joy &amp; Excellence</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-star"></i> Honors Session</span></div>
+                    </div>
+                </div>
+
+                <!-- 10. Corporate Event 4 -->
+                <div class="gallery-item" data-category="corporate" data-title="Global Summit Discussions — Corporate Event" data-highres="assets/images/corporate event 4.jpeg">
+                    <img src="assets/images/corporate event 4.jpeg" alt="Global Summit Discussions">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Corporate Event</span>
+                        <h4 class="gallery-title">Global Summit</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-globe"></i> International Summit</span></div>
+                    </div>
+                </div>
+
+                <!-- 11. Event Party 2 -->
+                <div class="gallery-item landscape" data-category="party" data-title="Midnight Toast — Event Party Series" data-highres="assets/images/event party2.jpeg">
+                    <img src="assets/images/event party2.jpeg" alt="Event Party Series 2">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Event Party</span>
+                        <h4 class="gallery-title">Midnight Toast</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-glass-cheers"></i> Joyful Spirits</span></div>
+                    </div>
+                </div>
+
+                <!-- 12. Graduation Issahaku 2 -->
+                <div class="gallery-item" data-category="graduation" data-sub="issahaku" data-title="The Scholar's Honor — Graduation for Issahaku" data-highres="assets/images/graduation for issahaku 2.jpeg">
+                    <img src="assets/images/graduation for issahaku 2.jpeg" alt="Graduation for Issahaku 2">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Graduation for Issahaku</span>
+                        <h4 class="gallery-title">The Scholar's Honor</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-scroll"></i> Cap &amp; Gown</span></div>
+                    </div>
+                </div>
+
+                <!-- 13. Wedding Collection -->
+                <div class="gallery-item" data-category="wedding" data-title="Regal Nuptial Elegance — Wedding Collection" data-highres="assets/images/donew-1-hero.jpg">
+                    <img src="assets/images/donew-1-hero.jpg" alt="Wedding Nuptials">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Weddings &amp; Milestones</span>
+                        <h4 class="gallery-title">Regal Nuptials</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-heart"></i> Heirloom Keepsake</span></div>
+                    </div>
+                </div>
+
+                <!-- 14. Event Party 3 -->
+                <div class="gallery-item landscape" data-category="party" data-title="Euphoric Celebrations — Event Party 3" data-highres="assets/images/event party3.jpeg">
+                    <img src="assets/images/event party3.jpeg" alt="Euphoric Celebrations">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Event Party</span>
+                        <h4 class="gallery-title">Euphoric Celebrations</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-music"></i> Vibrant Atmosphere</span></div>
+                    </div>
+                </div>
+
+                <!-- 15. Graduation Jibril -->
+                <div class="gallery-item" data-category="graduation" data-sub="jibril" data-title="Academic Triumph — Graduation for Jibril" data-highres="assets/images/grad-jibril-3.jpg">
+                    <img src="assets/images/grad-jibril-3.jpg" alt="Graduation for Jibril">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Graduation for Jibril</span>
+                        <h4 class="gallery-title">Academic Triumph</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-graduation-cap"></i> Jibril Honors</span></div>
+                    </div>
+                </div>
+
+                <!-- 16. Lifestyle 5 -->
+                <div class="gallery-item" data-category="lifestyle" data-title="Subtle Grace — Lifestyle" data-highres="assets/images/lifestyle for samuel 5.jpeg">
+                    <img src="assets/images/lifestyle for samuel 5.jpeg" alt="Lifestyle Series">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Lifestyle</span>
+                        <h4 class="gallery-title">Subtle Grace &amp; Texture</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-palette"></i> Editorial Glow</span></div>
+                    </div>
+                </div>
+
+                <!-- 17. Corporate Summit 10 -->
+                <div class="gallery-item landscape" data-category="corporate" data-title="International Delegation — Corporate Summit" data-highres="assets/images/corporate event10.jpeg">
+                    <img src="assets/images/corporate event10.jpeg" alt="Corporate Summit 10">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Corporate Event</span>
+                        <h4 class="gallery-title">International Delegation</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-handshake"></i> Diplomatic Ties</span></div>
+                    </div>
+                </div>
+
+                <!-- 18. Graduation Dora 3 -->
+                <div class="gallery-item" data-category="graduation" data-sub="dora" data-title="The Triumphant Gaze — Graduation for Dora" data-highres="assets/images/graduation for Dora 3.jpeg">
+                    <img src="assets/images/graduation for Dora 3.jpeg" alt="Graduation for Dora 3">
+                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category-pill">Graduation for Dora</span>
+                        <h4 class="gallery-title">The Triumphant Gaze</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-trophy"></i> Masterpiece Portrait</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BACK TO HOME OR BOOKING ACTION -->
+            <div class="text-center" style="margin: 4rem 0 2rem;">
+                <a href="index.html#contact" class="btn btn-touch btn-lg">
+                    Inquire About Booking a Shoot <span class="btn-arrow">&#9658;</span>
+                </a>
+                <a href="pricing.html" class="btn btn-outline btn-lg" style="margin-left: 1rem;">
+                    View Complete Price List &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <button class="lightbox-close-btn" aria-label="Close modal">&times;</button>
+        <button class="lightbox-prev-btn" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="lightbox-next-btn" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <div class="lightbox-content-box">
+            <div class="lightbox-image-wrap">
+                <img id="lightboxImg" src="" alt="Fullscreen Photography Preview">
+            </div>
+            <div class="lightbox-caption-bar">
+                <div class="lightbox-caption-text">
+                    <h3 id="lightboxTitle">Artwork Title</h3>
+                    <p id="lightboxCategory">Collection Category</p>
+                </div>
+                <div class="lightbox-caption-actions">
+                    <a id="lightboxWaBtn" href="https://wa.me/212706633200" target="_blank" class="btn btn-whatsapp btn-sm">
+                        <i class="fa-brands fa-whatsapp"></i> Book This Look on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <img src="assets/images/nobies-lens-logo.png" alt="Nobies Lens" class="footer-logo-img">
+                <p class="footer-quote">
+                    "We do not merely take photographs; we tell a compelling story that last a lifetime."
+                </p>
+                <div class="footer-social-row">
+                    <a href="https://wa.me/212706633200" target="_blank" class="footer-social-btn" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social" target="_blank" class="footer-social-btn link-instagram-direct" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/nobieslens" target="_blank" class="footer-social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="portfolio.html" class="footer-link">Portfolio Gallery</a>
+                    <a href="pricing.html" class="footer-link">Price List</a>
+                    <a href="index.html#about" class="footer-link">About Nobies Lens</a>
+                    <a href="index.html#contact" class="footer-link">Contact</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <div class="footer-links">
+                    <a href="portfolio.html?cat=lifestyle" class="footer-link">Lifestyle</a>
+                    <a href="portfolio.html?cat=graduation" class="footer-link">Graduation for Dora</a>
+                    <a href="portfolio.html?cat=graduation" class="footer-link">Graduation for Issahaku</a>
+                    <a href="portfolio.html?cat=graduation" class="footer-link">Graduation for Angelique</a>
+                    <a href="portfolio.html?cat=corporate" class="footer-link">Ambassador of Ghana to Morocco</a>
+                    <a href="portfolio.html?cat=party" class="footer-link">Event Party Celebrations</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Direct Contact</h4>
+                <div class="footer-links">
+                    <a href="https://wa.me/212706633200" target="_blank" class="footer-link"><i class="fa-brands fa-whatsapp text-gold"></i> Chat on WhatsApp</a>
+                    <a href="tel:0706633200" class="footer-link"><i class="fa-solid fa-phone text-gold"></i> Call Studio Line</a>
+                    <a href="https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social" target="_blank" class="footer-link link-instagram-direct"><i class="fa-brands fa-instagram text-gold"></i> Instagram Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026/2027 Nobies Lens Photography. All rights reserved. Crafted with Artistry &amp; Distinction.</p>
+                <div class="footer-bottom-links">
+                    <a href="index.html#contact">Privacy Policy</a>
+                    <a href="index.html#contact">Terms of Service</a>
+                    <a href="index.html#home">Back to Top &uarr;</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

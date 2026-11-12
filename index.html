@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nobies Lens Photography | Editorial Wedding, Graduation, Corporate &amp; Lifestyle</title>
-    <meta name="description" content="Nobies Lens Photography — Premier editorial photography studio. We do not merely take photographs; we tell a compelling story that last a lifetime. Specializing in Lifestyle, Graduations (Issahaku, Dora, Angelique, Jibril), Corporate &amp; Diplomatic Events, Event Parties, and Weddings.">
+    <meta name="description" content="Nobies Lens Photography - Premier editorial photography studio. We do not merely take photographs; we tell a compelling story that last a lifetime. Specializing in Lifestyle, Graduations (Issahaku, Dora, Angelique, Jibril), Corporate &amp; Diplomatic Events, Event Parties, and Weddings.">
     
     <!-- Google Fonts: Poppins (Clean, Modern & Editorial) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,17 +19,11 @@
 </head>
 <body>
 
-    <!-- =================================================================
-         CUSTOM ROUND CIRCLE MOUSE CURSOR (As Demonstrated in Video)
-         ================================================================= -->
+    <!-- CUSTOM ROUND CIRCLE MOUSE CURSOR -->
     <div class="custom-cursor-dot"></div>
     <div class="custom-cursor-circle"></div>
 
-
-    <!-- =================================================================
-         MAIN NAVIGATION HEADER
-         Features: Nobies Lens 3D Golden Logo + Theme Switcher Tabs
-         ================================================================= -->
+    <!-- MAIN NAVIGATION HEADER -->
     <header class="main-header">
         <div class="container nav-container">
             <!-- Brand 3D Golden Logo -->
@@ -40,26 +34,22 @@
             <!-- Desktop Menu Links -->
             <nav class="nav-menu">
                 <a href="#home" class="nav-link active">Home</a>
-                <a href="#gallery" class="nav-link">Portfolio</a>
+                <a href="portfolio.html" target="_blank" class="nav-link">Portfolio</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#pricing" class="nav-link">Price List</a>
+                <a href="pricing.html" target="_blank" class="nav-link">Price List</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
 
-            <!-- Navigation Actions: Theme Switcher Tab + Get in Touch Button -->
+            <!-- Navigation Actions: Single Indicator Theme Toggle + Contact Button -->
             <div class="nav-actions">
-                <!-- Theme Switcher Tab (Cream & White vs All-Black) -->
-                <div class="theme-switch-container" title="Choose Website Theme">
-                    <button class="theme-switch-btn active" data-theme-set="light">
-                        <i class="fa-solid fa-sun"></i> Cream &amp; White
-                    </button>
-                    <button class="theme-switch-btn" data-theme-set="dark">
-                        <i class="fa-solid fa-moon"></i> All-Black
-                    </button>
-                </div>
+                <!-- Single Theme Toggle Indicator -->
+                <button class="theme-toggle-single" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Theme (Cream &amp; White / All-Black)">
+                    <span class="theme-toggle-icon"><i class="fa-solid fa-moon"></i></span>
+                    <span class="theme-toggle-label">Theme</span>
+                </button>
 
                 <div class="nav-socials">
-                    <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20inquire%20about%20a%20photoshoot" target="_blank" class="nav-social-icon whatsapp" title="Chat on WhatsApp (0706633200)">
+                    <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20inquire%20about%20a%20photoshoot" target="_blank" class="nav-social-icon whatsapp" title="Chat on WhatsApp">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                     <a href="https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social" target="_blank" class="nav-social-icon instagram link-instagram-direct" title="Follow Nobies Lens on Instagram">
@@ -67,7 +57,7 @@
                     </a>
                 </div>
 
-                <!-- Signature "Get in Touch ?" Button -->
+                <!-- Signature Get in Touch Button -->
                 <a href="#contact" class="btn btn-touch btn-sm">
                     Get in Touch <span class="btn-arrow">&#9658;</span>
                 </a>
@@ -87,25 +77,21 @@
     <div class="mobile-nav">
         <div class="mobile-nav-links">
             <a href="#home" class="mobile-nav-link active">Home</a>
-            <a href="#gallery" class="mobile-nav-link">Portfolio Gallery</a>
+            <a href="portfolio.html" target="_blank" class="mobile-nav-link">Portfolio Gallery</a>
             <a href="#spotlights" class="mobile-nav-link">Curated Spotlights</a>
             <a href="#about" class="mobile-nav-link">About Nobies Lens</a>
-            <a href="#pricing" class="mobile-nav-link">Pricing Packages</a>
-            <a href="#contact" class="mobile-nav-link">Contact &amp; WhatsApp</a>
+            <a href="pricing.html" target="_blank" class="mobile-nav-link">Pricing Packages</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
         </div>
         <div class="mobile-nav-bottom">
-            <!-- Mobile Theme Switcher -->
-            <div class="theme-switch-container" style="justify-content: center; width: 100%; margin-bottom: 1rem;">
-                <button class="theme-switch-btn active" data-theme-set="light">
-                    <i class="fa-solid fa-sun"></i> Cream &amp; White
-                </button>
-                <button class="theme-switch-btn" data-theme-set="dark">
-                    <i class="fa-solid fa-moon"></i> All-Black
-                </button>
-            </div>
+            <!-- Mobile Single Theme Toggle Indicator -->
+            <button class="theme-toggle-single mobile-theme-toggle" id="themeToggleBtnMobile" aria-label="Toggle Theme">
+                <span class="theme-toggle-icon"><i class="fa-solid fa-moon"></i></span>
+                <span class="theme-toggle-label">Theme Mode</span>
+            </button>
 
             <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20book%20a%20photoshoot" target="_blank" class="btn btn-whatsapp btn-sm">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp (0706633200)
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
             </a>
             <div class="nav-socials" style="justify-content: center; gap: 1.5rem; margin-top: 0.5rem;">
                 <a href="https://wa.me/212706633200" target="_blank" class="nav-social-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -115,13 +101,10 @@
         </div>
     </div>
 
-    <!-- =================================================================
-         HERO SECTION — FULL-BLEED CINEMATIC FRAME (Jema Studios Style)
-         Horizontal photo fills the frame, text overlaid bottom-left
-         ================================================================= -->
+    <!-- HERO SECTION -->
     <section id="home" class="hero-fullbleed-section">
         <div class="hero-cinematic-frame">
-            <img src="assets/images/hero-event-horizontal.jpg" alt="Nobies Lens Photography — Capturing Life's Most Precious Moments" class="hero-cinematic-bg">
+            <img src="assets/images/hero-event-horizontal.jpg" alt="Nobies Lens Photography" class="hero-cinematic-bg">
             <div class="hero-cinematic-overlay"></div>
             <div class="hero-content-overlaid">
                 <div class="hero-eyebrow">ACCRA &bull; GHANA &bull; INTERNATIONAL &bull; EDITORIAL</div>
@@ -129,8 +112,8 @@
                 <p class="hero-subdescription">We do not merely take photographs; we tell a compelling story that last a lifetime.<br>Lifestyle, Graduations, Corporate Events, Parties &amp; Weddings.</p>
                 <div class="hero-pill-actions">
                     <a href="#contact" class="btn-pill btn-pill-primary">Get in Touch &rarr;</a>
-                    <a href="#gallery" class="btn-pill btn-pill-outline">View the Portfolio</a>
-                    <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20am%20interested%20in%20booking%20a%20photoshoot" target="_blank" class="btn-pill btn-pill-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp: 0706633200</a>
+                    <a href="portfolio.html" target="_blank" class="btn-pill btn-pill-outline">View the Portfolio</a>
+                    <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20am%20interested%20in%20booking%20a%20photoshoot" target="_blank" class="btn-pill btn-pill-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
                 </div>
                 <div class="hero-stats-row">
                     <div class="hero-stat-chip"><span class="stat-num">500+</span><span class="stat-lbl">Stories Told</span></div>
@@ -141,26 +124,22 @@
         </div>
     </section>
 
-    <!-- =================================================================
-         CURATED SPOTLIGHTS SECTION (WARM CREAM BACKGROUND #F6F2E9)
-         Spotlight 1: Lifestyle with Samuella (Lady in Red)
-         Spotlight 2: Corporate & Diplomacy (Ambassador of Ghana to Morocco)
-         ================================================================= -->
+    <!-- CURATED SPOTLIGHTS SECTION -->
     <section id="spotlights" class="spotlight-section">
         <div class="container">
-            <!-- Spotlight 1: Lifestyle with Samuella (Lady in Red by Palm Tree) -->
+            <!-- Spotlight 1: Lifestyle (Lady in Red) -->
             <div class="spotlight-card" style="margin-bottom: 3.5rem;">
                 <div class="spotlight-images">
                     <div class="spotlight-img-frame">
-                        <img src="assets/images/lifestyle for samuel.jpeg" alt="Lady in Red beside Palm Tree - Lifestyle with Samuella">
+                        <img src="assets/images/lifestyle for samuel.jpeg" alt="Lady in Red beside Palm Tree - Lifestyle">
                     </div>
                     <div class="spotlight-img-frame">
-                        <img src="assets/images/lifestyle for samuel 3.jpeg" alt="Lady in Red Profile - Lifestyle with Samuella">
+                        <img src="assets/images/lifestyle for samuel 3.jpeg" alt="Lady in Red Profile - Lifestyle">
                     </div>
                 </div>
                 <div class="spotlight-content">
                     <div class="section-tag">Featured Story</div>
-                    <h3>Lifestyle with Samuella: The Lady in Red</h3>
+                    <h3>Lifestyle Spotlight: The Lady in Red</h3>
                     <p>
                         A visual exploration of radiant poise and natural tropical elegance. Framing the striking silhouette of the lady in red against natural palm foliage, this session epitomizes the Nobies Lens philosophy: capturing organic light, vibrant color harmony, and effortless grace.
                     </p>
@@ -178,13 +157,13 @@
                             <span>Editorial Fashion &amp; Lifestyle Storytelling</span>
                         </div>
                     </div>
-                    <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20love%20the%20Lifestyle%20with%20Samuella%20shoot%20and%20would%20love%20to%20book%20a%20similar%20session!" target="_blank" class="btn btn-whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i> Book a Shoot Like This (0706633200)
+                    <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20love%20the%20Lifestyle%20shoot%20and%20would%20love%20to%20book%20a%20similar%20session!" target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Book a Shoot Like This
                     </a>
                 </div>
             </div>
 
-            <!-- Spotlight 2: Corporate & Diplomacy (Ambassador of Ghana to Morocco) -->
+            <!-- Spotlight 2: Corporate & Diplomacy -->
             <div class="spotlight-card">
                 <div class="spotlight-content">
                     <div class="section-tag">Corporate &amp; Diplomatic Excellence</div>
@@ -199,15 +178,15 @@
                         </div>
                         <div class="spotlight-feat-item">
                             <i class="fa-solid fa-check-circle"></i>
-                            <span>High-Resolution Press &amp; Archival Deliverables</span>
+                            <span>Fast-Turnaround Delivery for Press &amp; Media Desks</span>
                         </div>
                         <div class="spotlight-feat-item">
                             <i class="fa-solid fa-check-circle"></i>
-                            <span>Corporate Summits, Gala Dinners &amp; Keynotes</span>
+                            <span>Comprehensive Keynote, Delegation &amp; Candid Coverage</span>
                         </div>
                     </div>
                     <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20inquire%20about%20corporate%20or%20diplomatic%20event%20coverage" target="_blank" class="btn btn-touch">
-                        Inquire for Corporate Events <span class="btn-arrow">&#9658;</span>
+                        Inquire About Corporate Coverage <span class="btn-arrow">&#9658;</span>
                     </a>
                 </div>
                 <div class="spotlight-images">
@@ -222,724 +201,240 @@
         </div>
     </section>
 
-    <!-- =================================================================
-         PORTFOLIO & CLASSIFIED PHOTO GALLERY (PURE WHITE BACKGROUND #FFFFFF)
-         Classifications:
-         1. Lifestyle with Samuella
-         2. Graduation Events (Issahaku, Dora, Angelique, Jibril)
-         3. Corporate Events (Ambassador & Summits)
-         4. Event Party Pictures
-         5. Weddings & Milestones
-         ================================================================= -->
+    <!-- PORTFOLIO PREVIEW SECTION -->
     <section id="gallery" class="portfolio-section">
         <div class="container">
             <div class="section-header">
                 <div class="section-tag">Curated Visual Chronicles</div>
                 <h2 class="section-title">The Nobies Lens Portfolio</h2>
                 <p class="section-subtitle">
-                    Explore our categorized works across Graduation, Corporate, Lifestyle, Event Parties, and Weddings. Click any photograph to view in high resolution or request a similar session.
+                    A curated glimpse into our editorial portraiture, celebrations, and milestone archives.
                 </p>
             </div>
 
-            <!-- Filter Tabs -->
-            <div class="gallery-filter-tabs">
-                <button class="filter-btn active" data-filter="all">
-                    <i class="fa-solid fa-border-all"></i> All Works
-                </button>
-                <button class="filter-btn" data-filter="lifestyle">
-                    <i class="fa-solid fa-camera"></i> Lifestyle
-                </button>
-                <button class="filter-btn" data-filter="graduation">
-                    <i class="fa-solid fa-graduation-cap"></i> Graduations (Issahaku, Dora, Angelique)
-                </button>
-                <button class="filter-btn" data-filter="corporate">
-                    <i class="fa-solid fa-briefcase"></i> Corporate &amp; State Events
-                </button>
-                <button class="filter-btn" data-filter="party">
-                    <i class="fa-solid fa-champagne-glasses"></i> Event Parties
-                </button>
-                <button class="filter-btn" data-filter="wedding">
-                    <i class="fa-solid fa-ring"></i> Weddings &amp; Milestones
-                </button>
-            </div>
-
-            <!-- Gallery Grid with Aesthetically Arranged Real Photos -->
             <div class="gallery-grid">
-                <!-- 1. Lifestyle with Samuella (Hero Lady in Red) -->
+                <!-- 1. Lifestyle -->
                 <div class="gallery-item" data-category="lifestyle" data-title="The Lady in Red by the Palm Fronds" data-highres="assets/images/lifestyle for samuel.jpeg">
-                    <img src="assets/images/lifestyle for samuel.jpeg" alt="Lady in Red beside Palm Tree - Lifestyle with Samuella">
+                    <img src="assets/images/lifestyle for samuel.jpeg" alt="Lady in Red beside Palm Tree - Lifestyle">
                     <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
                     <div class="gallery-overlay">
                         <span class="gallery-category-pill">Lifestyle</span>
                         <h4 class="gallery-title">The Lady in Red by the Palm Fronds</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-camera"></i> Editorial Series</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-camera"></i> Editorial Series</span></div>
                     </div>
                 </div>
 
-                <!-- 2. Graduation for Dora 1 -->
-                <div class="gallery-item" data-category="graduation" data-sub="dora" data-title="Academic Splendor — Graduation for Dora" data-highres="assets/images/graduation for Dora 1.jpeg">
-                    <img src="assets/images/graduation for Dora 1.jpeg" alt="Graduation for Dora 1">
+                <!-- 2. Graduation Dora 1 -->
+                <div class="gallery-item" data-category="graduation" data-sub="dora" data-title="Academic Splendor - Graduation for Dora" data-highres="assets/images/graduation for Dora 1.jpeg">
+                    <img src="assets/images/graduation for Dora 1.jpeg" alt="Graduation Celebration for Dora">
                     <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
                     <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Graduation &bull; Dora</span>
-                        <h4 class="gallery-title">Academic Splendor — Dora</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-graduation-cap"></i> Honors Distinction</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
+                        <span class="gallery-category-pill">Graduation for Dora</span>
+                        <h4 class="gallery-title">Academic Splendor</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-graduation-cap"></i> Dora Graduation</span></div>
                     </div>
                 </div>
 
-                <!-- 3. Corporate Event (Ambassador of Ghana to Morocco 1) -->
-                <div class="gallery-item landscape" data-category="corporate" data-title="Diplomatic Mission — Ambassador of Ghana to Morocco" data-highres="assets/images/ambassador of Ghana to morocco1.jpeg">
+                <!-- 3. Ambassador Corporate -->
+                <div class="gallery-item landscape" data-category="corporate" data-title="Diplomatic Mission - Ambassador of Ghana to Morocco" data-highres="assets/images/ambassador of Ghana to morocco1.jpeg">
                     <img src="assets/images/ambassador of Ghana to morocco1.jpeg" alt="Ambassador of Ghana to Morocco">
                     <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
                     <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Corporate &bull; Diplomatic</span>
-                        <h4 class="gallery-title">Ambassador of Ghana to Morocco</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-landmark"></i> State Engagement</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
+                        <span class="gallery-category-pill">Corporate &amp; State</span>
+                        <h4 class="gallery-title">Diplomatic Mission</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-landmark"></i> Ambassador of Ghana to Morocco</span></div>
                     </div>
                 </div>
 
-                <!-- 4. Graduation for Issahaku -->
-                <div class="gallery-item" data-category="graduation" data-sub="issahaku" data-title="Crowning Triumph — Graduation for Issahaku" data-highres="assets/images/graduation for issahaku.jpeg">
-                    <img src="assets/images/graduation for issahaku.jpeg" alt="Graduation for Issahaku">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Graduation &bull; Issahaku</span>
-                        <h4 class="gallery-title">Crowning Triumph — Issahaku</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-award"></i> Executive Poise</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Event Party 1 -->
-                <div class="gallery-item landscape" data-category="party" data-title="Celebration Lights — Event Party Series" data-highres="assets/images/event party.jpeg">
-                    <img src="assets/images/event party.jpeg" alt="Event Party Atmosphere">
+                <!-- 4. Event Party -->
+                <div class="gallery-item landscape" data-category="party" data-title="Celebration Lights - Event Party Series" data-highres="assets/images/event party.jpeg">
+                    <img src="assets/images/event party.jpeg" alt="Event Party Series">
                     <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
                     <div class="gallery-overlay">
                         <span class="gallery-category-pill">Event Party</span>
-                        <h4 class="gallery-title">Celebration Lights &amp; Energy</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-music"></i> Vibrant Moments</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
+                        <h4 class="gallery-title">Celebration Lights</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-champagne-glasses"></i> Festive Night</span></div>
                     </div>
                 </div>
 
-                <!-- 6. Graduation for Angelique -->
-                <div class="gallery-item" data-category="graduation" data-sub="angelique" data-title="Elegance in Regalia — Graduation for Angelique" data-highres="assets/images/graduation for Angelique.jpeg">
-                    <img src="assets/images/graduation for Angelique.jpeg" alt="Graduation for Angelique">
+                <!-- 5. Graduation Issahaku -->
+                <div class="gallery-item" data-category="graduation" data-sub="issahaku" data-title="Crowning Triumph - Graduation for Issahaku" data-highres="assets/images/graduation for issahaku.jpeg">
+                    <img src="assets/images/graduation for issahaku.jpeg" alt="Graduation for Issahaku">
                     <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
                     <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Graduation &bull; Angelique</span>
-                        <h4 class="gallery-title">Elegance in Regalia — Angelique</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-star"></i> Milestone Portrait</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
+                        <span class="gallery-category-pill">Graduation for Issahaku</span>
+                        <h4 class="gallery-title">Crowning Triumph</h4>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-award"></i> Issahaku Graduation</span></div>
                     </div>
                 </div>
 
-                <!-- 7. Corporate Event Keynote (corporate event1) -->
-                <div class="gallery-item" data-category="corporate" data-title="Executive Leadership — Corporate Event" data-highres="assets/images/corporate event1.jpeg">
-                    <img src="assets/images/corporate event1.jpeg" alt="Corporate Event Leadership">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Corporate Event</span>
-                        <h4 class="gallery-title">Executive Leadership &amp; Vision</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-microphone"></i> Keynote Coverage</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. Lifestyle with Samuella 3 -->
-                <div class="gallery-item" data-category="lifestyle" data-title="Crimson Silhouette — Lifestyle with Samuella" data-highres="assets/images/lifestyle for samuel 3.jpeg">
-                    <img src="assets/images/lifestyle for samuel 3.jpeg" alt="Lady in Red Portrait - Lifestyle with Samuella">
+                <!-- 6. Lifestyle Crimson Silhouette -->
+                <div class="gallery-item" data-category="lifestyle" data-title="Crimson Silhouette - Lifestyle" data-highres="assets/images/lifestyle for samuel 3.jpeg">
+                    <img src="assets/images/lifestyle for samuel 3.jpeg" alt="Crimson Silhouette Portrait">
                     <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
                     <div class="gallery-overlay">
                         <span class="gallery-category-pill">Lifestyle</span>
                         <h4 class="gallery-title">Crimson Silhouette</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-sun"></i> High Fashion Portrait</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
+                        <div class="gallery-meta"><span><i class="fa-solid fa-sun"></i> High Fashion Portrait</span></div>
                     </div>
                 </div>
+            </div>
 
-                <!-- 9. Graduation for Dora 2 -->
-                <div class="gallery-item" data-category="graduation" data-sub="dora" data-title="Joy & Excellence — Graduation for Dora" data-highres="assets/images/graduation for Dora 2.jpeg">
-                    <img src="assets/images/graduation for Dora 2.jpeg" alt="Graduation for Dora 2">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Graduation &bull; Dora</span>
-                        <h4 class="gallery-title">Joy &amp; Excellence — Dora</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-certificate"></i> Commemorative Art</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10. Corporate Event 4 -->
-                <div class="gallery-item data-category="corporate" data-title="Global Summit Discussions — Corporate Event" data-highres="assets/images/corporate event 4.jpeg">
-                    <img src="assets/images/corporate event 4.jpeg" alt="Corporate Event Discussion">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Corporate Event</span>
-                        <h4 class="gallery-title">Global Summit Discussions</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-handshake"></i> Professional Summit</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 11. Event Party 2 -->
-                <div class="gallery-item landscape" data-category="party" data-title="Midnight Toast — Event Party Series" data-highres="assets/images/event party2.jpeg">
-                    <img src="assets/images/event party2.jpeg" alt="Event Party Midnight Toast">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Event Party</span>
-                        <h4 class="gallery-title">Midnight Toast &amp; Laughter</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-sparkles"></i> Unscripted Energy</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 12. Graduation for Issahaku 2 -->
-                <div class="gallery-item" data-category="graduation" data-sub="issahaku" data-title="The Scholar's Honor — Graduation for Issahaku" data-highres="assets/images/graduation for issahaku 2.jpeg">
-                    <img src="assets/images/graduation for issahaku 2.jpeg" alt="Graduation for Issahaku 2">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Graduation &bull; Issahaku</span>
-                        <h4 class="gallery-title">The Scholar's Honor — Issahaku</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-scroll"></i> Legacy Session</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 13. Wedding / Nuptial Heirloom (DONEW 1) -->
-                <div class="gallery-item" data-category="wedding" data-title="Regal Nuptial Elegance — Wedding Collection" data-highres="assets/images/donew-1-hero.jpg">
-                    <img src="assets/images/donew-1-hero.jpg" alt="Wedding Nuptial Elegance">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Wedding &bull; Nuptials</span>
-                        <h4 class="gallery-title">Regal Nuptial Elegance</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-heart"></i> Timeless Romance</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 14. Event Party 3 -->
-                <div class="gallery-item landscape" data-category="party" data-title="Euphoric Celebrations — Event Party 3" data-highres="assets/images/event party3.jpeg">
-                    <img src="assets/images/event party3.jpeg" alt="Event Party Euphoria">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Event Party</span>
-                        <h4 class="gallery-title">Euphoric Celebrations</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-glass-cheers"></i> Nightlife Glam</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 15. Graduation for Jibril -->
-                <div class="gallery-item" data-category="graduation" data-sub="jibril" data-title="Academic Triumph — Graduation for Jibril" data-highres="assets/images/grad-jibril-3.jpg">
-                    <img src="assets/images/grad-jibril-3.jpg" alt="Graduation for Jibril">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Graduation &bull; Jibril</span>
-                        <h4 class="gallery-title">Academic Triumph — Jibril</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-graduation-cap"></i> Cap &amp; Gown</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 16. Lifestyle with Samuella 5 -->
-                <div class="gallery-item" data-category="lifestyle" data-title="Subtle Grace — Lifestyle with Samuella" data-highres="assets/images/lifestyle for samuel 5.jpeg">
-                    <img src="assets/images/lifestyle for samuel 5.jpeg" alt="Lifestyle with Samuella Series">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Lifestyle</span>
-                        <h4 class="gallery-title">Subtle Grace &amp; Texture</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-palette"></i> Editorial Glow</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 17. Corporate Event 10 -->
-                <div class="gallery-item landscape" data-category="corporate" data-title="International Delegation — Corporate Summit" data-highres="assets/images/corporate event10.jpeg">
-                    <img src="assets/images/corporate event10.jpeg" alt="Corporate Summit Delegation">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Corporate &bull; Delegation</span>
-                        <h4 class="gallery-title">International Delegation Forum</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-globe"></i> Global Summit</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 18. Graduation for Dora 3 -->
-                <div class="gallery-item" data-category="graduation" data-sub="dora" data-title="The Triumphant Gaze — Graduation for Dora" data-highres="assets/images/graduation for Dora 3.jpeg">
-                    <img src="assets/images/graduation for Dora 3.jpeg" alt="Graduation for Dora 3">
-                    <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-category-pill">Graduation &bull; Dora</span>
-                        <h4 class="gallery-title">The Triumphant Gaze — Dora</h4>
-                        <div class="gallery-meta">
-                            <span><i class="fa-solid fa-star"></i> Graduation Honors</span>
-                            <span>View Fullscreen &rarr;</span>
-                        </div>
-                    </div>
-                </div>
+            <!-- VIEW MORE LINK OPENING NEW TAB -->
+            <div class="portfolio-view-more-box">
+                <a href="portfolio.html" target="_blank" class="btn btn-touch btn-lg btn-view-more-portfolio">
+                    <span>View More in Portfolio</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <p class="view-more-caption">Click to open our complete categorized portfolio in a new tab to see all photos from Dora, Issahaku, Angelique, Jibril, Corporate Events &amp; Celebrations.</p>
             </div>
         </div>
     </section>
 
-    <!-- =================================================================
-         ABOUT NOBIES LENS & CORRECTED PHILOSOPHY QUOTE (WARM CREAM #F6F2E9)
-         Quote: "We do not merely take photographs;  we tell a compelling story that last a lifetime"
-         ================================================================= -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="about-section">
         <div class="container about-grid">
-            <div class="about-images-composite">
-                <img src="assets/images/lifestyle for samuel 3.jpeg" alt="Nobies Lens Master Portraiture" class="about-img-main">
-                <img src="assets/images/ambassador of Ghana to morocco.jpeg" alt="Nobies Lens Diplomatic Event" class="about-img-secondary">
-            </div>
             <div class="about-content">
                 <div class="section-tag">About Nobies Lens Photography</div>
-                <h2 class="section-title">More Than Pictures — We Immortalize The Feeling.</h2>
+                <h2 class="section-title">More Than Pictures &mdash; We Immortalize The Feeling.</h2>
                 <p class="text-muted" style="margin-bottom: 1.25rem;">
-                    At <strong>Nobies Lens Photography</strong>, we believe every photograph is a sacred narrative. Whether it’s the quiet dignity of a graduate celebrating academic triumph, the poise of the Ambassador of Ghana to Morocco, the unbridled joy of an event party, or the vibrant beauty of our Lifestyle collection, our lens honors your story with warmth and cinematic distinction.
+                    At <strong>Nobies Lens Photography</strong>, we believe every photograph is a sacred narrative. Whether it is the quiet dignity of a graduate celebrating academic triumph, the poise of the Ambassador of Ghana to Morocco, the unbridled joy of an event party, or the vibrant beauty of our Lifestyle collection, our lens honors your story with warmth and cinematic distinction.
                 </p>
-                <!-- EXACT QUOTE REQUESTED BY USER -->
                 <div class="about-quote-box">
-                    <p class="about-quote">
-                        &ldquo;We do not merely take photographs;  we tell a compelling story that last a lifetime&rdquo;
-                    </p>
+                    <div class="quote-mark">&#8220;</div>
+                    <blockquote class="about-quote-text">
+                        We do not merely take photographs;  we tell a compelling story that last a lifetime.
+                    </blockquote>
+                    <div class="quote-author">&mdash; Nobies Lens Creative Philosophy</div>
                 </div>
+
                 <div class="about-pillars">
                     <div class="pillar-item">
-                        <h5><i class="fa-solid fa-wand-magic-sparkles"></i> Master Retouching</h5>
-                        <p>Organic skin textures, refined color grading, and magazine-grade finish.</p>
+                        <i class="fa-solid fa-wand-magic-sparkles text-gold"></i>
+                        <h4>Master Retouching</h4>
+                        <p>Preserving natural skin textures while delivering an ethereal, magazine-grade finish.</p>
                     </div>
                     <div class="pillar-item">
-                        <h5><i class="fa-solid fa-users"></i> Posing Direction</h5>
-                        <p>Comfortable, intuitive coaching so your authentic charisma shines effortlessly.</p>
+                        <i class="fa-solid fa-compass-drafting text-gold"></i>
+                        <h4>Posing Direction</h4>
+                        <p>Expert coaching so you look effortlessly poised, natural, and commanding.</p>
                     </div>
                     <div class="pillar-item">
-                        <h5><i class="fa-solid fa-bolt"></i> Fast Delivery</h5>
-                        <p>Secure online cloud galleries delivered promptly within 5 to 7 business days.</p>
+                        <i class="fa-solid fa-bolt text-gold"></i>
+                        <h4>Prompt Delivery</h4>
+                        <p>5â€“7 day turnaround with private cloud download links ready for print and sharing.</p>
                     </div>
                     <div class="pillar-item">
-                        <h5><i class="fa-solid fa-award"></i> Heirloom Keepsakes</h5>
-                        <p>Museum-grade canvas mounts, crystal frames, and bespoke photobooks.</p>
+                        <i class="fa-solid fa-crown text-gold"></i>
+                        <h4>Heirloom Legacy</h4>
+                        <p>Every frame is treated as an enduring piece of art that will be cherished across generations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-visual">
+                <div class="about-image-stack">
+                    <div class="about-img-main">
+                        <img src="assets/images/lifestyle for samuel 2.jpeg" alt="Nobies Lens Signature Portrait">
+                    </div>
+                    <div class="about-img-accent">
+                        <img src="assets/images/graduation for Dora 3.jpeg" alt="Graduation Distinction">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- =================================================================
-         PRICE LIST SECTION (WHITE BACKGROUND #FFFFFF)
-         ================================================================= -->
+    <!-- PRICE GUIDE OVERVIEW SECTION -->
     <section id="pricing" class="pricing-section">
         <div class="container">
             <div class="section-header">
                 <div class="section-tag">Investment &amp; Value</div>
-                <h2 class="section-title">Transparent Price List</h2>
+                <h2 class="section-title">Transparent Price Guide</h2>
                 <p class="section-subtitle">
-                    Select your session category to explore our comprehensive packages. Every Nobies Lens session delivers peerless quality, natural retouching, and zero hidden costs.
+                    Select your session discipline below or open our comprehensive price guide to explore detailed packages, deliverables, and turnaround times.
                 </p>
             </div>
 
-            <!-- Category Selector Tabs -->
-            <div class="pricing-tabs-nav">
-                <button class="pricing-nav-btn active" data-category="graduation">
-                    <i class="fa-solid fa-graduation-cap"></i> Graduation Shoots
-                </button>
-                <button class="pricing-nav-btn" data-category="lifestyle">
-                    <i class="fa-solid fa-camera"></i> Lifestyle
-                </button>
-                <button class="pricing-nav-btn" data-category="corporate">
-                    <i class="fa-solid fa-briefcase"></i> Corporate &amp; Events
-                </button>
-                <button class="pricing-nav-btn" data-category="wedding">
-                    <i class="fa-solid fa-ring"></i> Wedding Shoots
-                </button>
-            </div>
-
-            <!-- PANEL 1: GRADUATION PHOTOSHOOTS -->
-            <div id="pricing-graduation" class="pricing-category-panel active">
-                <div class="pricing-cards-grid">
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Scholar Essence</h3>
-                            <p class="pricing-tier-desc">Refined solo cap-and-gown session for the solo graduate.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">GHS 1,000</span>
-                                <span class="pricing-price-alt">/ ~$85 USD</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item">
-                                <i class="fa-solid fa-check"></i>
-                                <span><strong>45 Minutes</strong> Studio / Outdoor Session</span>
-                            </div>
-                            <div class="pricing-feature-item">
-                                <i class="fa-solid fa-check"></i>
-                                <span>Cap &amp; Gown + 1 Formal Look</span>
-                            </div>
-                            <div class="pricing-feature-item">
-                                <i class="fa-solid fa-check"></i>
-                                <span><strong>8 Master-Retouched</strong> High-Res Photos</span>
-                            </div>
-                            <div class="pricing-feature-item">
-                                <i class="fa-solid fa-check"></i>
-                                <span>Private Digital Download Gallery</span>
-                            </div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-outline btn-book-package" data-package="Scholar Essence" data-category="Graduation" data-price="GHS 1,000">
-                                Select Package
-                            </a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20book%20the%20Scholar%20Essence%20Graduation%20Package%20(GHS%201%2C000)" target="_blank" class="btn btn-whatsapp btn-sm">
-                                <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
-                            </a>
-                        </div>
+            <!-- Service Discipline Cards Leading to Pricing for Different Services -->
+            <div class="pricing-disciplines-grid">
+                <!-- 1. Graduation -->
+                <div class="pricing-discipline-card">
+                    <div class="discipline-icon-wrap"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3 class="discipline-title">Graduation Shoots</h3>
+                    <p class="discipline-desc">Solo cap-and-gown honors, executive regalia portraits, and family legacy packages (Issahaku, Dora, Angelique, Jibril).</p>
+                    <div class="discipline-action">
+                        <a href="pricing.html#graduation" target="_blank" class="btn-discipline-link">
+                            <span>View Graduation Prices</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
                     </div>
+                </div>
 
-                    <div class="pricing-card featured">
-                        <div class="pricing-popular-badge">Graduate's Choice</div>
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Dean's Honors</h3>
-                            <p class="pricing-tier-desc">Our flagship graduation package with family portraits included.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">GHS 1,800</span>
-                                <span class="pricing-price-alt">/ ~$150 USD</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item highlight">
-                                <i class="fa-solid fa-star text-gold"></i>
-                                <span><strong>1.5 Hours</strong> Campus &amp; Studio Sets</span>
-                            </div>
-                            <div class="pricing-feature-item">
-                                <i class="fa-solid fa-check"></i>
-                                <span><strong>2 Outfits</strong> (Gown + Executive Look)</span>
-                            </div>
-                            <div class="pricing-feature-item highlight">
-                                <i class="fa-solid fa-check text-gold"></i>
-                                <span><strong>16 Master-Retouched</strong> Editorial Portraits</span>
-                            </div>
-                            <div class="pricing-feature-item">
-                                <i class="fa-solid fa-check"></i>
-                                <span><strong>Family &amp; Parents Session Included</strong></span>
-                            </div>
-                            <div class="pricing-feature-item">
-                                <i class="fa-solid fa-check"></i>
-                                <span><strong>12x16 Inch</strong> Mounted Heirloom Frame</span>
-                            </div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-primary btn-book-package" data-package="Dean's Honors" data-category="Graduation" data-price="GHS 1,800">
-                                Select Package
-                            </a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20book%20the%20Dean's%20Honors%20Graduation%20Package%20(GHS%201%2C800)" target="_blank" class="btn btn-whatsapp btn-sm">
-                                <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
-                            </a>
-                        </div>
+                <!-- 2. Lifestyle -->
+                <div class="pricing-discipline-card">
+                    <div class="discipline-icon-wrap"><i class="fa-solid fa-camera"></i></div>
+                    <h3 class="discipline-title">Lifestyle &amp; Portraits</h3>
+                    <p class="discipline-desc">Editorial fashion, executive headshots, personal branding, and high-fashion outdoor lookbooks.</p>
+                    <div class="discipline-action">
+                        <a href="pricing.html#lifestyle" target="_blank" class="btn-discipline-link">
+                            <span>View Lifestyle Prices</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
                     </div>
+                </div>
 
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Summa Cum Laude Master</h3>
-                            <p class="pricing-tier-desc">Full honors session with handcrafted album &amp; cinematic reel.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">GHS 3,200</span>
-                                <span class="pricing-price-alt">/ ~$265 USD</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item">
-                                <i class="fa-solid fa-check"></i>
-                                <span><strong>2.5 Hours</strong> Full Campus &amp; Studio Experience</span>
-                            </div>
-                            <div class="pricing-feature-item">
-                                <i class="fa-solid fa-check"></i>
-                                <span><strong>3 Outfit Changes</strong></span>
-                            </div>
-                            <div class="pricing-feature-item">
-                                <i class="fa-solid fa-check"></i>
-                                <span><strong>28 Master-Retouched</strong> Fine-Art Artworks</span>
-                            </div>
-                            <div class="pricing-feature-item">
-                                <i class="fa-solid fa-check"></i>
-                                <span>Handcrafted 10x10 Linen Graduation Album</span>
-                            </div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-outline btn-book-package" data-package="Summa Cum Laude Master" data-category="Graduation" data-price="GHS 3,200">
-                                Select Package
-                            </a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20book%20the%20Summa%20Cum%20Laude%20Package%20(GHS%203%2C200)" target="_blank" class="btn btn-whatsapp btn-sm">
-                                <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
-                            </a>
-                        </div>
+                <!-- 3. Corporate -->
+                <div class="pricing-discipline-card">
+                    <div class="discipline-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3 class="discipline-title">Corporate &amp; Events</h3>
+                    <p class="discipline-desc">Keynote conferences, international diplomatic missions, executive leadership galas, and summits.</p>
+                    <div class="discipline-action">
+                        <a href="pricing.html#corporate" target="_blank" class="btn-discipline-link">
+                            <span>View Corporate Prices</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Weddings -->
+                <div class="pricing-discipline-card">
+                    <div class="discipline-icon-wrap"><i class="fa-solid fa-ring"></i></div>
+                    <h3 class="discipline-title">Weddings &amp; Milestones</h3>
+                    <p class="discipline-desc">Fine-art bridal portraits, traditional engagement coverage, cinematic films, and heirloom albums.</p>
+                    <div class="discipline-action">
+                        <a href="pricing.html#wedding" target="_blank" class="btn-discipline-link">
+                            <span>View Wedding Prices</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- PANEL 2: LIFESTYLE & PORTRAITS -->
-            <div id="pricing-lifestyle" class="pricing-category-panel">
-                <div class="pricing-cards-grid">
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Executive Headshot</h3>
-                            <p class="pricing-tier-desc">Clean, authoritative portraits for LinkedIn and professional profiles.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">GHS 950</span>
-                                <span class="pricing-price-alt">/ ~$80 USD</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span><strong>45 Minutes</strong> Session</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>2 Outfits / Backgrounds</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span><strong>5 High-End Retouched</strong> Corporate Portraits</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Full Commercial License</span></div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-outline btn-book-package" data-package="Executive Headshot" data-category="Lifestyle" data-price="GHS 950">Select Package</a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20would%20like%20to%20book%20the%20Executive%20Headshot%20Package%20(GHS%20950)" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
-                        </div>
-                    </div>
-
-                    <div class="pricing-card featured">
-                        <div class="pricing-popular-badge">Creator &amp; Lifestyle Choice</div>
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Editorial Lifestyle</h3>
-                            <p class="pricing-tier-desc">Artistic portraiture and editorial styling crafted for your personal brand.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">GHS 1,750</span>
-                                <span class="pricing-price-alt">/ ~$145 USD</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item highlight"><i class="fa-solid fa-star text-gold"></i> <span><strong>2 Hours</strong> On-Location / Studio</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Up to 3 Outfit Looks</span></div>
-                            <div class="pricing-feature-item highlight"><i class="fa-solid fa-check text-gold"></i> <span><strong>15 Magazine-Grade Retouched</strong> Photos</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Creative Direction &amp; Moodboard</span></div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-primary btn-book-package" data-package="Editorial Lifestyle" data-category="Lifestyle" data-price="GHS 1,750">Select Package</a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20would%20like%20to%20book%20the%20Editorial%20Lifestyle%20Package%20(GHS%201%2C750)" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
-                        </div>
-                    </div>
-
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Brand Campaign Pro</h3>
-                            <p class="pricing-tier-desc">Half-day production for brand lookbooks and creative campaigns.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">GHS 3,500</span>
-                                <span class="pricing-price-alt">/ ~$290 USD</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span><strong>Half-Day (4 Hours)</strong> Multi-Location</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Unlimited Outfit Transitions</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span><strong>35 Commercial-Grade Retouched</strong> Images</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Social Media Reels B-roll Clips</span></div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-outline btn-book-package" data-package="Brand Campaign Pro" data-category="Lifestyle" data-price="GHS 3,500">Select Package</a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20would%20like%20to%20book%20the%20Brand%20Campaign%20Pro%20Package%20(GHS%203%2C500)" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PANEL 3: CORPORATE & EVENTS -->
-            <div id="pricing-corporate" class="pricing-category-panel">
-                <div class="pricing-cards-grid">
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Half-Day Summit</h3>
-                            <p class="pricing-tier-desc">Conferences, keynote addresses, and business networking.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">GHS 3,800</span>
-                                <span class="pricing-price-alt">/ ~$310 USD</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span><strong>Up to 4 Hours</strong> Event Coverage</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>1 Senior Corporate Photographer</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span><strong>100+ Edited High-Res</strong> Event Photos</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Expedited Same-Day Press Release Teasers</span></div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-outline btn-book-package" data-package="Half-Day Summit" data-category="Corporate" data-price="GHS 3,800">Select Package</a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20am%20inquiring%20about%20the%20Half-Day%20Summit%20Corporate%20Package" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
-                        </div>
-                    </div>
-
-                    <div class="pricing-card featured">
-                        <div class="pricing-popular-badge">Diplomatic Standard</div>
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Diplomatic Gala Pro</h3>
-                            <p class="pricing-tier-desc">Comprehensive coverage for state visits, galas, and summits.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">GHS 7,500</span>
-                                <span class="pricing-price-alt">/ ~$620 USD</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item highlight"><i class="fa-solid fa-star text-gold"></i> <span><strong>Full Day 8 Hours</strong> Continuous Coverage</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>2 Senior Photographers</span></div>
-                            <div class="pricing-feature-item highlight"><i class="fa-solid fa-check text-gold"></i> <span><strong>250+ Color-Graded</strong> Master High-Res Photos</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Private Online Cloud Gallery with Archival Rights</span></div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-primary btn-book-package" data-package="Diplomatic Gala Pro" data-category="Corporate" data-price="GHS 7,500">Select Package</a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20am%20inquiring%20about%20the%20Diplomatic%20Gala%20Corporate%20Package" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
-                        </div>
-                    </div>
-
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Multi-Day Enterprise</h3>
-                            <p class="pricing-tier-desc">Multi-day corporate retreats, state conferences, and summits.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">Custom Quote</span>
-                                <span class="pricing-price-alt">/ Tailored</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Multi-Day Tailored Schedule</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Multi-Camera Crew + Drone Cinematography</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Daily Live Media Deliverables</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Executive Photobooks &amp; Wall Art</span></div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-outline btn-book-package" data-package="Multi-Day Enterprise" data-category="Corporate" data-price="Custom Quote">Inquire Custom</a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20would%20like%20a%20custom%20quote%20for%20a%20multi-day%20corporate%20event" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> WhatsApp Quote</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PANEL 4: WEDDING SHOOTS -->
-            <div id="pricing-wedding" class="pricing-category-panel">
-                <div class="pricing-cards-grid">
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Intimate Romance</h3>
-                            <p class="pricing-tier-desc">For court, intimate ceremonies, or micro-weddings.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">GHS 6,500</span>
-                                <span class="pricing-price-alt">/ ~$540 USD</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span><strong>Up to 5 Hours</strong> Coverage</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>1 Senior Wedding Photographer</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span><strong>200+ Color-Graded</strong> Master High-Res Photos</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Private Online Cloud Gallery</span></div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-outline btn-book-package" data-package="Intimate Romance" data-category="Wedding" data-price="GHS 6,500">Select Package</a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20am%20inquiring%20about%20the%20Intimate%20Romance%20Wedding%20Package" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
-                        </div>
-                    </div>
-
-                    <div class="pricing-card featured">
-                        <div class="pricing-popular-badge">Signature Collection</div>
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Timeless Royal</h3>
-                            <p class="pricing-tier-desc">Full day coverage with engagement shoot &amp; leather album.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">GHS 12,500</span>
-                                <span class="pricing-price-alt">/ ~$1,020 USD</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item highlight"><i class="fa-solid fa-star text-gold"></i> <span><strong>Full Day 10 Hours</strong> (Prep to Reception)</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span><strong>2 Senior Photographers</strong></span></div>
-                            <div class="pricing-feature-item highlight"><i class="fa-solid fa-check text-gold"></i> <span><strong>Complimentary Engagement Session</strong></span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Handcrafted 12x12 Leather Wedding Album</span></div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-primary btn-book-package" data-package="Timeless Royal" data-category="Wedding" data-price="GHS 12,500">Select Package</a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20am%20inquiring%20about%20the%20Timeless%20Royal%20Wedding%20Package" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
-                        </div>
-                    </div>
-
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="pricing-tier-name">Grand Imperial Celebration</h3>
-                            <p class="pricing-tier-desc">Multi-day traditional engagement &amp; white wedding with cinema.</p>
-                            <div class="pricing-price-wrap">
-                                <span class="pricing-price">GHS 22,000</span>
-                                <span class="pricing-price-alt">/ ~$1,800 USD</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span><strong>2 Full Days Coverage</strong> (Traditional + White Wedding)</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>3-Person Media Crew + 4K Drone Pilot</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span><strong>800+ Master-Edited</strong> Artworks</span></div>
-                            <div class="pricing-feature-item"><i class="fa-solid fa-check"></i> <span>Grand 14x14 Flush-Mount Heirloom Album</span></div>
-                        </div>
-                        <div class="pricing-actions">
-                            <a href="#contact" class="btn btn-outline btn-book-package" data-package="Grand Imperial Celebration" data-category="Wedding" data-price="GHS 22,000">Select Package</a>
-                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20am%20inquiring%20about%20the%20Grand%20Imperial%20Wedding%20Package" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Master Link Leading to Complete Pricing Page -->
+            <div class="pricing-view-more-box">
+                <a href="pricing.html" target="_blank" class="btn btn-touch btn-lg btn-view-all-prices">
+                    <span>Explore Full Price List &amp; Packages</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <p class="view-more-caption">Click to view all package tiers, prices, deliverables, and direct WhatsApp booking in a new tab.</p>
             </div>
         </div>
     </section>
 
-    <!-- =================================================================
-         DIRECT SOCIAL MEDIA & CONTACT (ALMOND CREAM BACKGROUND #EFE7DA)
-         WhatsApp: 0706633200 | Instagram: Nobies Lens
-         ================================================================= -->
+    <!-- DIRECT SOCIAL MEDIA & CONTACT -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-header">
                 <div class="section-tag">Direct Connections</div>
                 <h2 class="section-title">Connect With Nobies Lens Photography</h2>
                 <p class="section-subtitle">
-                    Reach our studio team instantly on WhatsApp (0706633200), follow our official Instagram invite, or submit your session inquiry online.
+                    Reach our studio team instantly on WhatsApp, follow our official Instagram invite, or submit your session inquiry online.
                 </p>
             </div>
 
-            <!-- 3 DEDICATED SOCIAL CONNECT CARDS -->
             <div class="social-cards-grid">
-                <!-- 1. WHATSAPP DIRECT (0706633200) -->
+                <!-- 1. WHATSAPP DIRECT -->
                 <div class="social-connect-card whatsapp-card">
                     <div>
                         <div class="social-card-top">
@@ -948,7 +443,7 @@
                             </div>
                             <div class="social-card-meta">
                                 <h3>WhatsApp Direct</h3>
-                                <div class="social-handle">0706633200</div>
+                                <div class="social-handle">Direct WhatsApp Line</div>
                             </div>
                         </div>
                         <div class="social-card-body">
@@ -958,11 +453,11 @@
                         </div>
                     </div>
                     <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20photoshoot%20session" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
-                        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (0706633200)
+                        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
                     </a>
                 </div>
 
-                <!-- 2. INSTAGRAM DIRECT (INVITE LINK) -->
+                <!-- 2. INSTAGRAM DIRECT -->
                 <div class="social-connect-card instagram-card">
                     <div>
                         <div class="social-card-top">
@@ -978,20 +473,19 @@
                             <p>
                                 Join our official Instagram profile to view the newest Lifestyle stories, graduation highlights, and behind-the-scenes reels.
                             </p>
-                            <!-- Instagram Simulated Feed -->
                             <div class="ig-preview-grid">
-                                <img src="assets/images/lifestyle for samuel.jpeg" alt="IG 1">
-                                <img src="assets/images/graduation for Dora 1.jpeg" alt="IG 2">
-                                <img src="assets/images/ambassador of Ghana to morocco1.jpeg" alt="IG 3">
+                                <img src="assets/images/lifestyle for samuel.jpeg" alt="Instagram Showcase 1">
+                                <img src="assets/images/graduation for Dora 1.jpeg" alt="Instagram Showcase 2">
+                                <img src="assets/images/ambassador of Ghana to morocco1.jpeg" alt="Instagram Showcase 3">
                             </div>
                         </div>
                     </div>
                     <a href="https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social" target="_blank" class="btn btn-touch link-instagram-direct" style="width: 100%;">
-                        <i class="fa-brands fa-instagram"></i> Follow on Instagram <span class="btn-arrow">&#9658;</span>
+                        <i class="fa-brands fa-instagram"></i> Follow on Instagram
                     </a>
                 </div>
 
-                <!-- 3. FACEBOOK DIRECT -->
+                <!-- 3. FACEBOOK CONNECT -->
                 <div class="social-connect-card facebook-card">
                     <div>
                         <div class="social-card-top">
@@ -999,29 +493,27 @@
                                 <i class="fa-brands fa-facebook-f"></i>
                             </div>
                             <div class="social-card-meta">
-                                <h3>Facebook Page</h3>
+                                <h3>Facebook Community</h3>
                                 <div class="social-handle">Nobies Lens Photography</div>
                             </div>
                         </div>
                         <div class="social-card-body">
                             <p>
-                                Join our community of clients, explore complete event albums, and read verified client testimonials and reviews.
+                                Connect with our growing photography family, view client testimonials, and keep up with seasonal studio specials.
                             </p>
                         </div>
                     </div>
-                    <a href="https://facebook.com/nobieslens" target="_blank" class="btn btn-outline" style="width: 100%; border-color: rgba(24,119,242,0.5); color: inherit;">
-                        <i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i> Connect on Facebook
+                    <a href="https://facebook.com/nobieslens" target="_blank" class="btn btn-outline" style="width: 100%;">
+                        <i class="fa-brands fa-facebook-f"></i> Connect on Facebook
                     </a>
                 </div>
             </div>
 
-            <!-- =========================================================
-                 INTERACTIVE BOOKING & INQUIRY FORM
-                 ========================================================= -->
+            <!-- INTERACTIVE BOOKING INQUIRY FORM -->
             <div id="booking" class="booking-container">
                 <div class="booking-info">
                     <div class="section-tag">Reserve Your Session</div>
-                    <h3>Let’s Create Something Extraordinary Together.</h3>
+                    <h3>Letâ€™s Create Something Extraordinary Together.</h3>
                     <p>
                         Whether preparing for your graduation milestone, corporate summit, lifestyle portrait, or wedding, share your details below to begin your story with Nobies Lens.
                     </p>
@@ -1030,7 +522,7 @@
                             <div class="booking-detail-icon"><i class="fa-solid fa-phone"></i></div>
                             <div class="booking-detail-content">
                                 <h5>Direct WhatsApp &amp; Call</h5>
-                                <p>0706633200 (WhatsApp link: +212 706 633 200)</p>
+                                <p><a href="https://wa.me/212706633200" target="_blank" style="color:var(--color-gold); font-weight:600; text-decoration:none;">Click to Chat on WhatsApp &rarr;</a></p>
                             </div>
                         </div>
                         <div class="booking-detail-item">
@@ -1050,17 +542,16 @@
                     </div>
                 </div>
 
-                <!-- Form Element -->
                 <div class="booking-form-wrap">
                     <form id="bookingForm" class="booking-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="clientName">Your Full Name *</label>
-                                <input type="text" id="clientName" class="form-input" placeholder="e.g. Samuella or Dora" required>
+                                <input type="text" id="clientName" class="form-input" placeholder="e.g. Dora or Issahaku" required>
                             </div>
                             <div class="form-group">
                                 <label for="clientPhone">WhatsApp / Phone Number *</label>
-                                <input type="tel" id="clientPhone" class="form-input" placeholder="e.g. 0706633200" required>
+                                <input type="tel" id="clientPhone" class="form-input" placeholder="e.g. Your phone or WhatsApp number" required>
                             </div>
                         </div>
 
@@ -1073,11 +564,11 @@
                                 <label for="shootCategory">Shoot Category *</label>
                                 <select id="shootCategory" class="form-select" required>
                                     <option value="" disabled selected>Select shoot category</option>
-                                    <option value="Graduation Photoshoot">?? Graduation (Issahaku, Dora, Angelique, Jibril)</option>
-                                    <option value="Lifestyle with Samuella">? Lifestyle with Samuella / Portraits</option>
-                                    <option value="Corporate / Diplomatic Event">??? Corporate &amp; Diplomatic Events</option>
-                                    <option value="Event Party / Celebration">?? Event Party / Celebrations</option>
-                                    <option value="Wedding Photoshoot">?? Wedding Photoshoot</option>
+                                    <option value="Graduation Photoshoot">Graduation (Issahaku, Dora, Angelique, Jibril)</option>
+                                    <option value="Lifestyle Photoshoot">Lifestyle / Portraits</option>
+                                    <option value="Corporate / Diplomatic Event">Corporate &amp; Diplomatic Events</option>
+                                    <option value="Event Party / Celebration">Event Party &amp; Celebrations</option>
+                                    <option value="Wedding Photoshoot">Wedding &amp; Nuptials</option>
                                 </select>
                             </div>
                         </div>
@@ -1097,27 +588,22 @@
                                         <option value="Editorial Lifestyle (GHS 1,750)">Editorial Lifestyle (GHS 1,750)</option>
                                         <option value="Brand Campaign Pro (GHS 3,500)">Brand Campaign Pro (GHS 3,500)</option>
                                     </optgroup>
-                                    <optgroup label="Corporate &amp; Event Packages">
+                                    <optgroup label="Corporate Packages">
                                         <option value="Half-Day Summit (GHS 3,800)">Half-Day Summit (GHS 3,800)</option>
                                         <option value="Diplomatic Gala Pro (GHS 7,500)">Diplomatic Gala Pro (GHS 7,500)</option>
-                                        <option value="Multi-Day Enterprise (Custom Quote)">Multi-Day Enterprise (Custom Quote)</option>
+                                        <option value="Bespoke Multi-Day Summit">Bespoke Multi-Day Summit</option>
                                     </optgroup>
                                     <optgroup label="Wedding Packages">
                                         <option value="Intimate Romance (GHS 6,500)">Intimate Romance (GHS 6,500)</option>
                                         <option value="Timeless Royal (GHS 12,500)">Timeless Royal (GHS 12,500)</option>
-                                        <option value="Grand Imperial Celebration (GHS 22,000)">Grand Imperial Celebration (GHS 22,000)</option>
+                                        <option value="Grand Imperial (GHS 22,000)">Grand Imperial (GHS 22,000)</option>
                                     </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="preferredDate">Target Date</label>
-                                <input type="date" id="preferredDate" class="form-input">
+                                <label for="shootDate">Preferred Date</label>
+                                <input type="date" id="shootDate" class="form-input">
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="shootLocation">Preferred Location</label>
-                            <input type="text" id="shootLocation" class="form-input" placeholder="e.g. Nobies Lens Studio, Campus, Event Venue, or Outdoor">
                         </div>
 
                         <div class="form-group">
@@ -1129,7 +615,7 @@
 
                         <div class="form-actions">
                             <button type="button" id="btnSendWhatsApp" class="btn btn-whatsapp">
-                                <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp (0706633200)
+                                <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
                             </button>
                             <button type="submit" class="btn btn-touch">
                                 Submit Online <span class="btn-arrow">&#9658;</span>
@@ -1141,9 +627,7 @@
         </div>
     </section>
 
-    <!-- =================================================================
-         CLIENT TESTIMONIALS (WHITE BACKGROUND #FFFFFF)
-         ================================================================= -->
+    <!-- CLIENT TESTIMONIALS -->
     <section class="testimonials-section">
         <div class="container">
             <div class="section-header">
@@ -1172,14 +656,14 @@
                     <div>
                         <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                         <p class="testimonial-text">
-                            "Our photoshoot with Nobies Lens for Lifestyle with Samuella was magazine quality. The lady in red with the palm fronds came out beyond anything we imagined. Real artistry!"
+                            "Covering our diplomatic conference required utmost precision and decorum. Nobies Lens captured the Ambassador of Ghana to Morocco and foreign delegates with sublime dignity and prompt press turnaround."
                         </p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="assets/images/lifestyle for samuel 2.jpeg" alt="Samuella Review" class="testimonial-avatar">
+                        <img src="assets/images/corporate event 6.jpeg" alt="Corporate Review" class="testimonial-avatar">
                         <div class="author-info">
-                            <h4>Samuella &amp; Team</h4>
-                            <span>Lifestyle &amp; Editorial</span>
+                            <h4>Kwame O.</h4>
+                            <span>Diplomatic Protocol Officer</span>
                         </div>
                     </div>
                 </div>
@@ -1188,14 +672,14 @@
                     <div>
                         <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                         <p class="testimonial-text">
-                            "Nobies Lens covered our corporate and state engagements with immaculate professionalism. Fast press-ready turnarounds and flawless lighting for every dignitary."
+                            "Our photoshoot with Nobies Lens for the Lifestyle series was magazine quality. The lady in red with the palm fronds came out beyond anything we imagined. Real artistry!"
                         </p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="assets/images/corporate event 6.jpeg" alt="Corporate Review" class="testimonial-avatar">
+                        <img src="assets/images/lifestyle for samuel 2.jpeg" alt="Lifestyle Review" class="testimonial-avatar">
                         <div class="author-info">
-                            <h4>Kwesi O.</h4>
-                            <span>Corporate &amp; Diplomatic Affairs</span>
+                            <h4>Lifestyle Creative</h4>
+                            <span>Editorial Client</span>
                         </div>
                     </div>
                 </div>
@@ -1203,11 +687,9 @@
         </div>
     </section>
 
-    <!-- =================================================================
-         FOOTER (LUXURY CONTRAST WITH NOBIES LENS 3D LOGO)
-         ================================================================= -->
+    <!-- FOOTER SECTION -->
     <footer class="main-footer">
-        <div class="container">
+        <div class="container footer-content">
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="#home" class="brand-logo" aria-label="Nobies Lens Photography">
@@ -1217,7 +699,7 @@
                         We do not merely take photographs;  we tell a compelling story that last a lifetime.
                     </p>
                     <div class="footer-socials">
-                        <a href="https://wa.me/212706633200" target="_blank" class="footer-social-btn" title="WhatsApp 0706633200"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://wa.me/212706633200" target="_blank" class="footer-social-btn" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social" target="_blank" class="footer-social-btn link-instagram-direct" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://facebook.com/nobieslens" target="_blank" class="footer-social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
@@ -1226,12 +708,12 @@
                 <div class="footer-col">
                     <h4>Categories</h4>
                     <div class="footer-links">
-                        <a href="#gallery" class="footer-link">Lifestyle</a>
-                        <a href="#gallery" class="footer-link">Graduation for Dora</a>
-                        <a href="#gallery" class="footer-link">Graduation for Issahaku</a>
-                        <a href="#gallery" class="footer-link">Graduation for Angelique</a>
-                        <a href="#gallery" class="footer-link">Corporate &amp; Ambassador Events</a>
-                        <a href="#gallery" class="footer-link">Event Party Celebrations</a>
+                        <a href="portfolio.html?cat=lifestyle" class="footer-link">Lifestyle</a>
+                        <a href="portfolio.html?cat=graduation" class="footer-link">Graduation for Dora</a>
+                        <a href="portfolio.html?cat=graduation" class="footer-link">Graduation for Issahaku</a>
+                        <a href="portfolio.html?cat=graduation" class="footer-link">Graduation for Angelique</a>
+                        <a href="portfolio.html?cat=corporate" class="footer-link">Corporate &amp; Ambassador Events</a>
+                        <a href="portfolio.html?cat=party" class="footer-link">Event Party Celebrations</a>
                     </div>
                 </div>
 
@@ -1240,9 +722,9 @@
                     <div class="footer-links">
                         <a href="#home" class="footer-link">Home</a>
                         <a href="#spotlights" class="footer-link">Featured Stories</a>
-                        <a href="#gallery" class="footer-link">Portfolio</a>
+                        <a href="portfolio.html" target="_blank" class="footer-link">Portfolio</a>
                         <a href="#about" class="footer-link">About Nobies Lens</a>
-                        <a href="#pricing" class="footer-link">Price List</a>
+                        <a href="pricing.html" target="_blank" class="footer-link">Price List</a>
                         <a href="#contact" class="footer-link">Contact &amp; Book</a>
                     </div>
                 </div>
@@ -1251,11 +733,11 @@
                     <h4>Direct Contact</h4>
                     <div class="footer-contact-item">
                         <i class="fa-brands fa-whatsapp"></i>
-                        <span>WhatsApp: 0706633200</span>
+                        <span><a href="https://wa.me/212706633200" target="_blank" style="color:inherit; text-decoration:none;">Chat on WhatsApp</a></span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-phone"></i>
-                        <span>Call: 0706633200</span>
+                        <span><a href="tel:0706633200" style="color:inherit; text-decoration:none;">Call Studio Line</a></span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fa-brands fa-instagram"></i>
@@ -1275,60 +757,39 @@
         </div>
     </footer>
 
-    <!-- =================================================================
-         FLOATING THEME SWITCHER (EASY TOGGLE ANYWHERE)
-         ================================================================= -->
-    <div class="floating-theme-switch" title="Toggle Theme">
-        <button class="active" data-theme-set="light">
-            <i class="fa-solid fa-sun text-gold"></i> <span>Cream &amp; White</span>
-        </button>
-        <button data-theme-set="dark">
-            <i class="fa-solid fa-moon"></i> <span>All-Black</span>
-        </button>
-    </div>
-
-    <!-- =================================================================
-         FLOATING QUICK WHATSAPP BUTTON (0706633200)
-         ================================================================= -->
+    <!-- FLOATING QUICK WHATSAPP BUTTON -->
     <div class="floating-whatsapp">
-        <div class="floating-wa-tooltip">Chat with Nobies Lens on WhatsApp (0706633200)</div>
-        <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20photoshoot" target="_blank" class="floating-wa-btn" aria-label="Direct WhatsApp Chat (0706633200)">
+        <div class="floating-wa-tooltip">Chat with Nobies Lens on WhatsApp</div>
+        <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20photoshoot" target="_blank" class="floating-wa-btn" aria-label="Direct WhatsApp Chat">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </div>
 
-    <!-- =================================================================
-         INTERACTIVE FULLSCREEN LIGHTBOX MODAL
-         ================================================================= -->
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
     <div id="lightboxModal" class="lightbox-modal">
-        <div class="lightbox-content">
-            <button id="lightboxClose" class="lightbox-close" aria-label="Close Lightbox">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <button id="lightboxPrev" class="lightbox-nav-btn lightbox-prev" aria-label="Previous Image">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button id="lightboxNext" class="lightbox-nav-btn lightbox-next" aria-label="Next Image">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-            
-            <div class="lightbox-img-wrap">
-                <img id="lightboxImg" src="" alt="Nobies Lens Fullscreen Portfolio">
-            </div>
+        <button class="lightbox-close-btn" aria-label="Close modal">&times;</button>
+        <button class="lightbox-prev-btn" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="lightbox-next-btn" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
 
-            <div class="lightbox-meta">
-                <div class="lightbox-info">
-                    <h4 id="lightboxTitle">Portfolio Work</h4>
-                    <p id="lightboxCategory">NOBIES LENS EDITORIAL</p>
+        <div class="lightbox-content-box">
+            <div class="lightbox-image-wrap">
+                <img id="lightboxImg" src="" alt="Fullscreen Photography Preview">
+            </div>
+            <div class="lightbox-caption-bar">
+                <div class="lightbox-caption-text">
+                    <h3 id="lightboxTitle">Artwork Title</h3>
+                    <p id="lightboxCategory">Collection Category</p>
                 </div>
-                <a id="lightboxInquireBtn" href="#" target="_blank" class="btn btn-whatsapp btn-sm">
-                    <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
-                </a>
+                <div class="lightbox-caption-actions">
+                    <a id="lightboxWaBtn" href="https://wa.me/212706633200" target="_blank" class="btn btn-whatsapp btn-sm">
+                        <i class="fa-brands fa-whatsapp"></i> Book This Look on WhatsApp
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
 </html>

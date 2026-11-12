@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nobies Lens Pricing | Transparent Investment Guide &amp; Packages</title>
+    <meta name="description" content="Transparent pricing and packages for Nobies Lens Photography. Explore rates for Graduation, Lifestyle, Corporate &amp; Diplomatic events, and Wedding celebrations. Zero hidden fees.">
+    
+    <!-- Google Fonts: Poppins (Clean, Modern & Editorial) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- CUSTOM ROUND CIRCLE MOUSE CURSOR -->
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-circle"></div>
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" aria-label="Nobies Lens Photography">
+                <img src="assets/images/nobies-lens-logo.png" alt="Nobies Lens Photography Official Logo" class="brand-logo-img">
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="pricing.html" class="nav-link active">Price List</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Single Theme Toggle Indicator -->
+                <button class="theme-toggle-single" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Theme (Cream &amp; White / All-Black)">
+                    <span class="theme-toggle-icon"><i class="fa-solid fa-moon"></i></span>
+                    <span class="theme-toggle-label">Theme</span>
+                </button>
+
+                <div class="nav-socials">
+                    <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20inquire%20about%20a%20photoshoot" target="_blank" class="nav-social-icon whatsapp" title="Chat on WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social" target="_blank" class="nav-social-icon instagram link-instagram-direct" title="Follow Nobies Lens on Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+                <a href="index.html#contact" class="btn btn-touch btn-sm">
+                    Get in Touch <span class="btn-arrow">&#9658;</span>
+                </a>
+            </div>
+
+            <button class="hamburger-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-overlay"></div>
+    <div class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="portfolio.html" class="mobile-nav-link">Portfolio Gallery</a>
+            <a href="pricing.html" class="mobile-nav-link active">Pricing Packages</a>
+            <a href="index.html#about" class="mobile-nav-link">About Nobies Lens</a>
+            <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+        </div>
+        <div class="mobile-nav-bottom">
+            <button class="theme-toggle-single mobile-theme-toggle" id="themeToggleBtnMobile" aria-label="Toggle Theme">
+                <span class="theme-toggle-icon"><i class="fa-solid fa-moon"></i></span>
+                <span class="theme-toggle-label">Theme Mode</span>
+            </button>
+
+            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20book%20a%20photoshoot" target="_blank" class="btn btn-whatsapp btn-sm">
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- PRICING HEADER HERO -->
+    <section class="page-hero-section">
+        <div class="container text-center">
+            <div class="hero-eyebrow">TRANSPARENCY &bull; INTEGRITY &bull; VALUE</div>
+            <h1 class="page-hero-title">Investment &amp; Price Guide</h1>
+            <p class="page-hero-subtitle">
+                Select your session category to explore our bespoke packages. Every Nobies Lens booking delivers peerless quality, natural editorial retouching, and zero hidden costs.
+            </p>
+        </div>
+    </section>
+
+    <!-- PRICING MAIN SECTION -->
+    <section class="pricing-section" style="padding-top: 1rem;">
+        <div class="container">
+            <!-- Category Tabs -->
+            <div class="pricing-tabs-nav">
+                <button class="pricing-nav-btn active" data-category="graduation" id="tab-graduation">
+                    <i class="fa-solid fa-graduation-cap"></i> Graduation Shoots
+                </button>
+                <button class="pricing-nav-btn" data-category="lifestyle" id="tab-lifestyle">
+                    <i class="fa-solid fa-camera"></i> Lifestyle
+                </button>
+                <button class="pricing-nav-btn" data-category="corporate" id="tab-corporate">
+                    <i class="fa-solid fa-briefcase"></i> Corporate &amp; Events
+                </button>
+                <button class="pricing-nav-btn" data-category="wedding" id="tab-wedding">
+                    <i class="fa-solid fa-ring"></i> Wedding Shoots
+                </button>
+            </div>
+
+            <!-- PANEL 1: GRADUATION PHOTOSHOOTS -->
+            <div id="pricing-graduation" class="pricing-category-panel active">
+                <div class="pricing-cards-grid">
+                    <!-- Tier 1 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Scholar Essence</h3>
+                            <p class="pricing-tier-desc">Refined solo cap-and-gown session for the solo graduate.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">GHS 1,000</span>
+                                <span class="pricing-price-alt">/ ~$85 USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> 1-Hour Dedicated Studio / Campus Session</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 8 Masterfully Retouched High-Res Images</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> All Unedited Soft Copies Provided via Cloud</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 2 Outfit Changes (Cap &amp; Gown + Formal)</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 5–7 Day Delivery Guarantee</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20book%20the%20Scholar%20Essence%20Graduation%20Package%20(GHS%201%2C000)" target="_blank" class="btn btn-whatsapp btn-sm">
+                                <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2 (Popular) -->
+                    <div class="pricing-card popular">
+                        <div class="pricing-popular-badge">Graduate's Top Choice</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Dean's Honors</h3>
+                            <p class="pricing-tier-desc">Our flagship graduation package with family portraits included.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">GHS 1,800</span>
+                                <span class="pricing-price-alt">/ ~$150 USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> 2 Hours Multi-Location Coverage</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 18 Masterfully Retouched Editorial Images</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Family &amp; Friends Group Portraits Included</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 3 Outfit Looks with Posing Direction</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 2 Large Fine-Art Keepsake Prints (A4)</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Priority 4-Day Turnaround</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20book%20the%20Dean's%20Honors%20Graduation%20Package%20(GHS%201%2C800)" target="_blank" class="btn btn-whatsapp btn-sm">
+                                <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Summa Cum Laude Master</h3>
+                            <p class="pricing-tier-desc">Full honors session with handcrafted album &amp; cinematic reel.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">GHS 3,200</span>
+                                <span class="pricing-price-alt">/ ~$265 USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> Half-Day Comprehensive Coverage (Up to 4 Hours)</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 30 Ultra-Retouched Editorial Grade Portraits</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Handcrafted Hardcover Keepsake Photo Book</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 60-Second 4K Cinematic Instagram Highlight Reel</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Full Family Group Session Included</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 48-Hour Rush Sneak-Peek Delivery</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20book%20the%20Summa%20Cum%20Laude%20Package%20(GHS%203%2C200)" target="_blank" class="btn btn-whatsapp btn-sm">
+                                <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL 2: LIFESTYLE & PORTRAITS -->
+            <div id="pricing-lifestyle" class="pricing-category-panel">
+                <div class="pricing-cards-grid">
+                    <!-- Tier 1 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Executive Headshot</h3>
+                            <p class="pricing-tier-desc">Clean, distinguished personal branding for LinkedIn, resumes &amp; press.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">GHS 950</span>
+                                <span class="pricing-price-alt">/ ~$80 USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> 45-Minute Studio / Office Session</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 5 High-Impact Corporate Retouched Headshots</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Both High-Res and Web-Optimized Crops</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Wardrobe &amp; Posture Guidance</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20would%20like%20to%20book%20the%20Executive%20Headshot%20Package%20(GHS%20950)" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2 (Popular) -->
+                    <div class="pricing-card popular">
+                        <div class="pricing-popular-badge">Creator &amp; Lifestyle Choice</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Editorial Lifestyle</h3>
+                            <p class="pricing-tier-desc">Artistic portraiture and editorial styling crafted for your personal brand.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">GHS 1,750</span>
+                                <span class="pricing-price-alt">/ ~$145 USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> 2-Hour Thematic Outdoor / Location Session</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 15 Magazine-Quality Editorial Retouched Images</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 3 Curated Outfits &amp; Style Direction</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Social Media Ready Formats (4:5 and 9:16)</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Full Creative Direction &amp; Moodboard</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20would%20like%20to%20book%20the%20Editorial%20Lifestyle%20Package%20(GHS%201%2C750)" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Brand Campaign Pro</h3>
+                            <p class="pricing-tier-desc">Complete visual identity lookbook for brands, influencers &amp; designers.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">GHS 3,500</span>
+                                <span class="pricing-price-alt">/ ~$290 USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> Up to 4 Hours Multi-Location Creative Shoot</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 30 High-Fashion Commercial Retouched Assets</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Full Commercial &amp; Advertising Rights</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Behind-The-Scenes Video Clips for Reels/TikTok</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Expedited 3-Day Turnaround</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20would%20like%20to%20book%20the%20Brand%20Campaign%20Pro%20Package%20(GHS%203%2C500)" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL 3: CORPORATE & STATE EVENTS -->
+            <div id="pricing-corporate" class="pricing-category-panel">
+                <div class="pricing-cards-grid">
+                    <!-- Tier 1 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Half-Day Summit</h3>
+                            <p class="pricing-tier-desc">Concise executive coverage for workshops, press briefings &amp; board meetings.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">GHS 3,800</span>
+                                <span class="pricing-price-alt">/ ~$315 USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> Up to 4 Hours Continuous Event Coverage</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Keynote Speakers, Panelists &amp; Audience Candid Shots</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 75+ Color-Graded High-Resolution Event Photos</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 24-Hour Same-Day Press Release Highlight Selection</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20am%20inquiring%20about%20the%20Half-Day%20Summit%20Corporate%20Package" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2 (Popular) -->
+                    <div class="pricing-card popular">
+                        <div class="pricing-popular-badge">Diplomatic &amp; Gala Standard</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Diplomatic Gala Pro</h3>
+                            <p class="pricing-tier-desc">Full-day international summit or state gala coverage with dual shooters.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">GHS 7,500</span>
+                                <span class="pricing-price-alt">/ ~$625 USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> Full Day Coverage (Up to 8 Hours)</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 2 Dedicated Professional Photographers</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Step-and-Repeat Red Carpet VIP Arrival Coverage</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 180+ Masterfully Curated &amp; Edited Deliverables</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Executive On-Site Headshot Booth Add-On Available</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Secure Cloud Portal for Press &amp; Delegation Access</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20am%20inquiring%20about%20the%20Diplomatic%20Gala%20Corporate%20Package" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Bespoke Enterprise</h3>
+                            <p class="pricing-tier-desc">Multi-day conventions, international bilateral summits &amp; state visits.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">Custom Quote</span>
+                                <span class="pricing-price-alt">/ Consultation</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> Multi-Day Full-Scope Photographic Team</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Real-Time Live Photo Feed for Social Media Teams</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Drone / Aerial Architecture Overview Included</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Executive Photobooks for State Dignitaries</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Dedicated NDA &amp; Diplomatic Security Clearance</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20would%20like%20a%20custom%20quote%20for%20a%20multi-day%20corporate%20event" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> WhatsApp Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL 4: WEDDINGS & CELEBRATIONS -->
+            <div id="pricing-wedding" class="pricing-category-panel">
+                <div class="pricing-cards-grid">
+                    <!-- Tier 1 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Intimate Romance</h3>
+                            <p class="pricing-tier-desc">Civil vows, court weddings, or intimate engagement ceremony coverage.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">GHS 6,500</span>
+                                <span class="pricing-price-alt">/ ~$540 USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> 5 Hours Continuous Photographic Coverage</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 1 Lead Editorial Wedding Photographer</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 150+ Signature Color-Graded Images</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Intimate Bridal &amp; Couple Portrait Session</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Online Heirloom Gallery (1-Year Hosting)</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20am%20inquiring%20about%20the%20Intimate%20Romance%20Wedding%20Package" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2 (Popular) -->
+                    <div class="pricing-card popular">
+                        <div class="pricing-popular-badge">Bridal Signature Collection</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Timeless Royal</h3>
+                            <p class="pricing-tier-desc">Full traditional wedding &amp; white nuptial ceremony with dual shooters.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">GHS 12,500</span>
+                                <span class="pricing-price-alt">/ ~$1,040 USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> Up to 10 Hours Full-Day Wedding Day Coverage</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 2 Master Wedding Photographers</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Complimentary Pre-Wedding Engagement Shoot</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 350+ Signature Handcrafted Color-Graded Heirlooms</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Deluxe 12x12 Genuine Leatherbound Album</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 2 Mini Parent Replica Albums</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 7-Day Social Media Sneak Peek</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20am%20inquiring%20about%20the%20Timeless%20Royal%20Wedding%20Package" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-tier-name">Grand Imperial Celebration</h3>
+                            <p class="pricing-tier-desc">Multi-day traditional &amp; white wedding with cinema film &amp; drone coverage.</p>
+                            <div class="pricing-price-wrap">
+                                <span class="pricing-price">GHS 22,000</span>
+                                <span class="pricing-price-alt">/ ~$1,830 USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features-list">
+                            <li><i class="fa-solid fa-check text-gold"></i> 2 Full Days Coverage (Traditional Ceremony + White Wedding)</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 3 Photographers + 2 Dedicated Cinematographers</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 4K Drone Aerial Venue &amp; Processional Cinematography</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 600+ Editorial Grade Artworks in Presentation Box</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Luxury 14x14 Italian Crystal Cover Heirloom Album</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> 5-Minute Cinematic Film + 60-Sec Teaser Reel</li>
+                            <li><i class="fa-solid fa-check text-gold"></i> Custom Engraved Wooden USB Gift Box</li>
+                        </ul>
+                        <div class="pricing-card-footer">
+                            <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%2C%20I%20am%20inquiring%20about%20the%20Grand%20Imperial%20Wedding%20Package" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STUDIO GUARANTEES -->
+            <div class="studio-guarantees-bar" style="margin-top: 3.5rem;">
+                <div class="guarantee-item">
+                    <i class="fa-solid fa-wand-magic-sparkles text-gold"></i>
+                    <div>
+                        <h4>Master Editorial Retouching</h4>
+                        <p>Skin tones remain natural, radiant, and true to life.</p>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fa-solid fa-cloud-arrow-down text-gold"></i>
+                    <div>
+                        <h4>Private Cloud Archive</h4>
+                        <p>Instant download in full print &amp; web resolutions.</p>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fa-solid fa-bolt text-gold"></i>
+                    <div>
+                        <h4>Guaranteed 5–7 Day Turnaround</h4>
+                        <p>Fast delivery without ever compromising heirloom artistry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BACK TO HOME OR BOOKING ACTION -->
+            <div class="text-center" style="margin: 4rem 0 2rem;">
+                <a href="index.html#contact" class="btn btn-touch btn-lg">
+                    Inquire About Booking a Shoot <span class="btn-arrow">&#9658;</span>
+                </a>
+                <a href="portfolio.html" class="btn btn-outline btn-lg" style="margin-left: 1rem;">
+                    View Complete Portfolio &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <img src="assets/images/nobies-lens-logo.png" alt="Nobies Lens" class="footer-logo-img">
+                <p class="footer-quote">
+                    "We do not merely take photographs; we tell a compelling story that last a lifetime."
+                </p>
+                <div class="footer-social-row">
+                    <a href="https://wa.me/212706633200" target="_blank" class="footer-social-btn" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social" target="_blank" class="footer-social-btn link-instagram-direct" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/nobieslens" target="_blank" class="footer-social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="portfolio.html" class="footer-link">Portfolio Gallery</a>
+                    <a href="pricing.html" class="footer-link">Price List</a>
+                    <a href="index.html#about" class="footer-link">About Nobies Lens</a>
+                    <a href="index.html#contact" class="footer-link">Contact</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <div class="footer-links">
+                    <a href="portfolio.html" class="footer-link">Lifestyle</a>
+                    <a href="portfolio.html" class="footer-link">Graduation for Dora</a>
+                    <a href="portfolio.html" class="footer-link">Graduation for Issahaku</a>
+                    <a href="portfolio.html" class="footer-link">Graduation for Angelique</a>
+                    <a href="portfolio.html" class="footer-link">Ambassador of Ghana to Morocco</a>
+                    <a href="portfolio.html" class="footer-link">Event Party Celebrations</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Direct Contact</h4>
+                <div class="footer-links">
+                    <a href="https://wa.me/212706633200" target="_blank" class="footer-link"><i class="fa-brands fa-whatsapp text-gold"></i> Chat on WhatsApp</a>
+                    <a href="tel:0706633200" class="footer-link"><i class="fa-solid fa-phone text-gold"></i> Call Studio Line</a>
+                    <a href="https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social" target="_blank" class="footer-link link-instagram-direct"><i class="fa-brands fa-instagram text-gold"></i> Instagram Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026/2027 Nobies Lens Photography. All rights reserved. Crafted with Artistry &amp; Distinction.</p>
+                <div class="footer-bottom-links">
+                    <a href="index.html#contact">Privacy Policy</a>
+                    <a href="index.html#contact">Terms of Service</a>
+                    <a href="index.html#home">Back to Top &uarr;</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
