@@ -1,7 +1,11 @@
 ﻿/**
  * NOBIES LENS PHOTOGRAPHY - MAIN JAVASCRIPT
- * Interactive controls: Gallery filtering, Pricing tabs, Lightbox,
- * Direct WhatsApp messaging (0706633200), and Instagram invitation.
+ * Features:
+ * - Round Circle Mouse Cursor with Smooth Follow & Hover Expansion
+ * - Theme Switcher Tab: Cream & White (Default) vs All-Black Midnight
+ * - Poppins Typography Support
+ * - Filterable Categorized Portfolio (Samuella, Angelique, Dora, Issahaku, Corporate, Parties)
+ * - Lightbox Modal with Zoom & Direct WhatsApp Booking (0706633200)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,9 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Official Studio Configuration
     // -------------------------------------------------------------
     const STUDIO_CONFIG = {
-        name: "NOBIES LENS Photography",
+        name: "Nobies Lens Photography",
         displayPhone: "0706633200",
-        // International format required by WhatsApp API (Morocco +212)
         whatsappApiNumber: "212706633200",
         instagramUrl: "https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social",
         facebookUrl: "https://facebook.com/nobieslens",
@@ -19,7 +22,88 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // -------------------------------------------------------------
-    // 1. Navigation & Scroll Effects
+    // 1. Theme Switcher (Cream & White vs All-Black)
+    // -------------------------------------------------------------
+    const savedTheme = localStorage.getItem('nobies_theme') || 'light';
+    applyTheme(savedTheme);
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('nobies_theme', theme);
+
+        // Update all theme toggle buttons across the page
+        document.querySelectorAll('.theme-switch-btn, .floating-theme-switch button').forEach(btn => {
+            if (btn.getAttribute('data-theme-set') === theme) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+
+    document.querySelectorAll('.theme-switch-btn, .floating-theme-switch button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const chosenTheme = btn.getAttribute('data-theme-set');
+            applyTheme(chosenTheme);
+        });
+    });
+
+    // -------------------------------------------------------------
+    // 2. Custom Round Circle Mouse Cursor (As in Video)
+    // -------------------------------------------------------------
+    const cursorDot = document.querySelector('.custom-cursor-dot');
+    const cursorCircle = document.querySelector('.custom-cursor-circle');
+
+    if (cursorDot && cursorCircle && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        let mouseX = -100;
+        let mouseY = -100;
+        let circleX = -100;
+        let circleY = -100;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursorDot.style.left = `${mouseX}px`;
+            cursorDot.style.top = `${mouseY}px`;
+        });
+
+        // Smooth follow animation for the outer round circle
+        function animateCursor() {
+            // Linear interpolation (lerp) for smooth lagging circular trailing
+            circleX += (mouseX - circleX) * 0.16;
+            circleY += (mouseY - circleY) * 0.16;
+
+            cursorCircle.style.left = `${circleX}px`;
+            cursorCircle.style.top = `${circleY}px`;
+
+            requestAnimationFrame(animateCursor);
+        }
+        requestAnimationFrame(animateCursor);
+
+        // Hover effect: expand circular cursor over interactive targets
+        const interactiveSelectors = 'a, button, .btn, .gallery-item, .filter-btn, .pricing-card, input, select, textarea';
+        document.querySelectorAll(interactiveSelectors).forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorCircle.classList.add('hovered');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorCircle.classList.remove('hovered');
+            });
+        });
+
+        // Hide cursor when leaving window
+        document.addEventListener('mouseleave', () => {
+            cursorDot.style.opacity = '0';
+            cursorCircle.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', () => {
+            cursorDot.style.opacity = '1';
+            cursorCircle.style.opacity = '1';
+        });
+    }
+
+    // -------------------------------------------------------------
+    // 3. Navigation & Scroll Effects
     // -------------------------------------------------------------
     const header = document.querySelector('.main-header');
     const hamburgerBtn = document.querySelector('.hamburger-btn');
@@ -27,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileOverlay = document.querySelector('.mobile-overlay');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-    // Sticky header shadow on scroll
     window.addEventListener('scroll', () => {
         if (window.scrollY > 40) {
             header.classList.add('scrolled');
@@ -36,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Mobile nav toggle
     function toggleMobileNav() {
         const isOpen = mobileNav.classList.contains('open');
         if (isOpen) {
@@ -52,17 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (hamburgerBtn) {
-        hamburgerBtn.addEventListener('click', toggleMobileNav);
-    }
-    if (mobileOverlay) {
-        mobileOverlay.addEventListener('click', toggleMobileNav);
-    }
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleMobileNav);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileNav);
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (mobileNav.classList.contains('open')) {
-                toggleMobileNav();
-            }
+            if (mobileNav.classList.contains('open')) toggleMobileNav();
         });
     });
 
@@ -87,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------
-    // 2. Curated Portfolio Classifications & Filtering
+    // 4. Curated Portfolio Filtering (Samuella, Angelique, Dora, etc.)
     // -------------------------------------------------------------
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
@@ -116,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------
-    // 3. Pricing Category Tabs Switcher
+    // 5. Pricing Category Tabs Switcher
     // -------------------------------------------------------------
     const pricingButtons = document.querySelectorAll('.pricing-nav-btn');
     const pricingPanels = document.querySelectorAll('.pricing-category-panel');
@@ -139,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------
-    // 4. Interactive Fullscreen Lightbox
+    // 6. Interactive Fullscreen Lightbox
     // -------------------------------------------------------------
     const lightboxModal = document.getElementById('lightboxModal');
     const lightboxImg = document.getElementById('lightboxImg');
@@ -162,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const targetItem = visibleItems[index];
         const img = targetItem.querySelector('img');
-        const title = targetItem.getAttribute('data-title') || 'NOBIES LENS Portfolio';
+        const title = targetItem.getAttribute('data-title') || 'Nobies Lens Portfolio';
         const category = targetItem.getAttribute('data-category') || 'Editorial';
         const highResSrc = targetItem.getAttribute('data-highres') || img.src;
 
@@ -173,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (lightboxInquireBtn) {
             const encodedMsg = encodeURIComponent(
-                `Hello NOBIES LENS Photography, I saw your portfolio photo "${title}" (${category}) and would like to inquire about booking a photoshoot.`
+                `Hello Nobies Lens Photography, I saw your portfolio photo "${title}" (${category}) and would like to inquire about booking a photoshoot.`
             );
             lightboxInquireBtn.href = `https://wa.me/${STUDIO_CONFIG.whatsappApiNumber}?text=${encodedMsg}`;
         }
@@ -191,9 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             const visibleItems = visibleGalleryImages();
             const index = visibleItems.indexOf(item);
-            if (index !== -1) {
-                openLightbox(index);
-            }
+            if (index !== -1) openLightbox(index);
         });
     });
 
@@ -212,13 +286,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (lightboxModal) {
         lightboxModal.addEventListener('click', (e) => {
-            if (e.target === lightboxModal) {
-                closeLightbox();
-            }
+            if (e.target === lightboxModal) closeLightbox();
         });
     }
 
-    // Keyboard shortcuts for Lightbox
     window.addEventListener('keydown', (e) => {
         if (!lightboxModal.classList.contains('active')) return;
         if (e.key === 'Escape') closeLightbox();
@@ -227,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------
-    // 5. Package Booking via WhatsApp Links
+    // 7. Package Booking via WhatsApp Links
     // -------------------------------------------------------------
     const bookPackageButtons = document.querySelectorAll('.btn-book-package');
     const selectPackageDropdown = document.getElementById('shootPackage');
@@ -239,24 +310,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const pkgCategory = btn.getAttribute('data-category');
             const pkgPrice = btn.getAttribute('data-price');
 
-            // Pre-select in booking form
-            if (selectCategoryDropdown && pkgCategory) {
-                selectCategoryDropdown.value = pkgCategory;
-            }
-            if (selectPackageDropdown && pkgName) {
-                selectPackageDropdown.value = pkgName;
-            }
+            if (selectCategoryDropdown && pkgCategory) selectCategoryDropdown.value = pkgCategory;
+            if (selectPackageDropdown && pkgName) selectPackageDropdown.value = pkgName;
 
-            // Direct WhatsApp inquiry link
             const msg = encodeURIComponent(
-                `Hello NOBIES LENS Photography, I'm interested in booking the "${pkgName}" package (${pkgCategory} - ${pkgPrice}). Could you please share your availability?`
+                `Hello Nobies Lens Photography, I'm interested in booking the "${pkgName}" package (${pkgCategory} - ${pkgPrice}). Could you please share your availability?`
             );
             btn.href = `https://wa.me/${STUDIO_CONFIG.whatsappApiNumber}?text=${msg}`;
         });
     });
 
     // -------------------------------------------------------------
-    // 6. Interactive Booking & Inquiry Form
+    // 8. Interactive Booking & Inquiry Form
     // -------------------------------------------------------------
     const bookingForm = document.getElementById('bookingForm');
     const sendWhatsAppBtn = document.getElementById('btnSendWhatsApp');
@@ -272,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const location = document.getElementById('shootLocation')?.value || 'Studio / To Discuss';
         const notes = document.getElementById('clientMessage')?.value.trim() || 'None';
 
-        return `Hello *NOBIES LENS Photography*,%0A%0AI would like to inquire about booking a photography session:%0A%0A` +
+        return `Hello *Nobies Lens Photography*,%0A%0AI would like to inquire about booking a photography session:%0A%0A` +
                `👤 *Client Name:* ${encodeURIComponent(name)}%0A` +
                `📱 *Phone / WhatsApp:* ${encodeURIComponent(phone)}%0A` +
                `✉️ *Email:* ${encodeURIComponent(email)}%0A` +
@@ -306,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (formFeedback) {
                 formFeedback.innerHTML = `
                     <strong>Thank you, ${name}!</strong><br>
-                    Your session inquiry has been received by NOBIES LENS Photography. We will reach out to you directly on WhatsApp or Email shortly.
+                    Your session inquiry has been received by Nobies Lens Photography. We will reach out to you directly on WhatsApp or Email shortly.
                     <br><a href="https://wa.me/${STUDIO_CONFIG.whatsappApiNumber}?text=${compileInquiryMessage()}" target="_blank" style="display:inline-block; margin-top:10px; color:#25D366; font-weight:700; text-decoration:underline;">
                         Click here to chat immediately on WhatsApp (0706633200) &rarr;
                     </a>
@@ -320,28 +385,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------
-    // 7. FAQ Accordion
-    // -------------------------------------------------------------
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const questionBtn = item.querySelector('.faq-question');
-        if (questionBtn) {
-            questionBtn.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                faqItems.forEach(i => i.classList.remove('active'));
-                if (!isActive) {
-                    item.classList.add('active');
-                }
-            });
-        }
-    });
-
-    // -------------------------------------------------------------
-    // 8. Dynamic WhatsApp & Instagram Links Initialization
+    // 9. Dynamic Links Initialization
     // -------------------------------------------------------------
     const directWaLinks = document.querySelectorAll('.link-whatsapp-direct');
     directWaLinks.forEach(link => {
-        const customText = link.getAttribute('data-msg') || 'Hello NOBIES LENS Photography, I would like to inquire about booking a photoshoot session.';
+        const customText = link.getAttribute('data-msg') || 'Hello Nobies Lens Photography, I would like to inquire about booking a photoshoot session.';
         link.href = `https://wa.me/${STUDIO_CONFIG.whatsappApiNumber}?text=${encodeURIComponent(customText)}`;
     });
 
@@ -350,4 +398,3 @@ document.addEventListener('DOMContentLoaded', () => {
         link.href = STUDIO_CONFIG.instagramUrl;
     });
 });
-
