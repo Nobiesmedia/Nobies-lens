@@ -1,20 +1,21 @@
-/**
- * LUBIS LENS PHOTOGRAPHY - MAIN JAVASCRIPT
+﻿/**
+ * NOBIES LENS PHOTOGRAPHY - MAIN JAVASCRIPT
  * Interactive controls: Gallery filtering, Pricing tabs, Lightbox,
- * Direct WhatsApp messaging, and Booking Inquiries.
+ * Direct WhatsApp messaging (0706633200), and Instagram invitation.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------
-    // Configuration & Settings
-    // Replace WhatsApp phone number with Lubis Lens' official line if desired
+    // Official Studio Configuration
     // -------------------------------------------------------------
     const STUDIO_CONFIG = {
-        name: "Lubis Lens Photography",
-        whatsappNumber: "233548123456", // Default international WhatsApp format
-        instagramHandle: "@lubislens",
-        facebookPage: "Lubis Lens Photography",
-        email: "inquiries@lubislens.com"
+        name: "NOBIES LENS Photography",
+        displayPhone: "0706633200",
+        // International format required by WhatsApp API (Morocco +212)
+        whatsappApiNumber: "212706633200",
+        instagramUrl: "https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social",
+        facebookUrl: "https://facebook.com/nobieslens",
+        email: "inquiries@nobieslens.com"
     };
 
     // -------------------------------------------------------------
@@ -86,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------
-    // 2. Portfolio Filtering
+    // 2. Curated Portfolio Classifications & Filtering
     // -------------------------------------------------------------
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
@@ -100,7 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             galleryItems.forEach(item => {
                 const itemCategory = item.getAttribute('data-category');
-                if (filterValue === 'all' || filterValue === itemCategory) {
+                const itemSub = item.getAttribute('data-sub') || '';
+
+                if (filterValue === 'all' || 
+                    filterValue === itemCategory || 
+                    itemSub.includes(filterValue)) {
                     item.classList.remove('hide');
                     item.style.animation = 'fadeIn 0.4s ease forwards';
                 } else {
@@ -150,13 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openLightbox(index) {
         const visibleItems = visibleGalleryImages();
+        if (visibleItems.length === 0) return;
         if (index < 0) index = visibleItems.length - 1;
         if (index >= visibleItems.length) index = 0;
         currentGalleryIndex = index;
 
         const targetItem = visibleItems[index];
         const img = targetItem.querySelector('img');
-        const title = targetItem.getAttribute('data-title') || 'Lubis Lens Portfolio';
+        const title = targetItem.getAttribute('data-title') || 'NOBIES LENS Portfolio';
         const category = targetItem.getAttribute('data-category') || 'Editorial';
         const highResSrc = targetItem.getAttribute('data-highres') || img.src;
 
@@ -167,9 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (lightboxInquireBtn) {
             const encodedMsg = encodeURIComponent(
-                `Hello Lubis Lens Photography, I saw your portfolio photo "${title}" (${category} photoshoot) and would like to inquire about booking a similar session.`
+                `Hello NOBIES LENS Photography, I saw your portfolio photo "${title}" (${category}) and would like to inquire about booking a photoshoot.`
             );
-            lightboxInquireBtn.href = `https://wa.me/${STUDIO_CONFIG.whatsappNumber}?text=${encodedMsg}`;
+            lightboxInquireBtn.href = `https://wa.me/${STUDIO_CONFIG.whatsappApiNumber}?text=${encodedMsg}`;
         }
 
         lightboxModal.classList.add('active');
@@ -233,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const pkgCategory = btn.getAttribute('data-category');
             const pkgPrice = btn.getAttribute('data-price');
 
-            // Pre-select in booking form if user scrolls down
+            // Pre-select in booking form
             if (selectCategoryDropdown && pkgCategory) {
                 selectCategoryDropdown.value = pkgCategory;
             }
@@ -241,11 +247,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 selectPackageDropdown.value = pkgName;
             }
 
-            // Also format direct WhatsApp link
+            // Direct WhatsApp inquiry link
             const msg = encodeURIComponent(
-                `Hello Lubis Lens Photography, I'm interested in booking the "${pkgName}" package (${pkgCategory} photoshoot - ${pkgPrice}). Could you share your availability?`
+                `Hello NOBIES LENS Photography, I'm interested in booking the "${pkgName}" package (${pkgCategory} - ${pkgPrice}). Could you please share your availability?`
             );
-            btn.href = `https://wa.me/${STUDIO_CONFIG.whatsappNumber}?text=${msg}`;
+            btn.href = `https://wa.me/${STUDIO_CONFIG.whatsappApiNumber}?text=${msg}`;
         });
     });
 
@@ -266,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const location = document.getElementById('shootLocation')?.value || 'Studio / To Discuss';
         const notes = document.getElementById('clientMessage')?.value.trim() || 'None';
 
-        return `Hello *Lubis Lens Photography*,%0A%0AI would like to inquire about booking a photography session:%0A%0A` +
+        return `Hello *NOBIES LENS Photography*,%0A%0AI would like to inquire about booking a photography session:%0A%0A` +
                `👤 *Client Name:* ${encodeURIComponent(name)}%0A` +
                `📱 *Phone / WhatsApp:* ${encodeURIComponent(phone)}%0A` +
                `✉️ *Email:* ${encodeURIComponent(email)}%0A` +
@@ -287,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const waUrl = `https://wa.me/${STUDIO_CONFIG.whatsappNumber}?text=${compileInquiryMessage()}`;
+            const waUrl = `https://wa.me/${STUDIO_CONFIG.whatsappApiNumber}?text=${compileInquiryMessage()}`;
             window.open(waUrl, '_blank');
         });
     }
@@ -297,13 +303,12 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const name = document.getElementById('clientName')?.value || 'Friend';
             
-            // Show confirmation banner
             if (formFeedback) {
                 formFeedback.innerHTML = `
                     <strong>Thank you, ${name}!</strong><br>
-                    Your session inquiry has been received. We will contact you shortly via WhatsApp or Email. 
-                    <br><a href="https://wa.me/${STUDIO_CONFIG.whatsappNumber}?text=${compileInquiryMessage()}" target="_blank" style="display:inline-block; margin-top:8px; color:#25D366; font-weight:700; text-decoration:underline;">
-                        Click here to chat right now on WhatsApp &rarr;
+                    Your session inquiry has been received by NOBIES LENS Photography. We will reach out to you directly on WhatsApp or Email shortly.
+                    <br><a href="https://wa.me/${STUDIO_CONFIG.whatsappApiNumber}?text=${compileInquiryMessage()}" target="_blank" style="display:inline-block; margin-top:10px; color:#25D366; font-weight:700; text-decoration:underline;">
+                        Click here to chat immediately on WhatsApp (0706633200) &rarr;
                     </a>
                 `;
                 formFeedback.classList.add('success');
@@ -320,21 +325,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const questionBtn = item.querySelector('.faq-question');
-        questionBtn.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            faqItems.forEach(i => i.classList.remove('active'));
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        });
+        if (questionBtn) {
+            questionBtn.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
     });
 
     // -------------------------------------------------------------
-    // 8. Dynamic WhatsApp Links Initialization
+    // 8. Dynamic WhatsApp & Instagram Links Initialization
     // -------------------------------------------------------------
     const directWaLinks = document.querySelectorAll('.link-whatsapp-direct');
     directWaLinks.forEach(link => {
-        const customText = link.getAttribute('data-msg') || 'Hello Lubis Lens Photography, I would like to inquire about booking a photoshoot session.';
-        link.href = `https://wa.me/${STUDIO_CONFIG.whatsappNumber}?text=${encodeURIComponent(customText)}`;
+        const customText = link.getAttribute('data-msg') || 'Hello NOBIES LENS Photography, I would like to inquire about booking a photoshoot session.';
+        link.href = `https://wa.me/${STUDIO_CONFIG.whatsappApiNumber}?text=${encodeURIComponent(customText)}`;
+    });
+
+    const directIgLinks = document.querySelectorAll('.link-instagram-direct');
+    directIgLinks.forEach(link => {
+        link.href = STUDIO_CONFIG.instagramUrl;
     });
 });
+
