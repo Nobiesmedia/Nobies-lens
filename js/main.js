@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         phoneCallNumber: "0706633200",
         instagramUrl: "https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social",
         tiktokUrl: "https://www.tiktok.com/@nobies_lens",
-        facebookUrl: "https://facebook.com/nobieslens",
+        facebookUrl: "https://www.facebook.com/share/1a6Kfqfyds/",
         email: "noblebright18@gmail.com"
     };
 
