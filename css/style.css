@@ -2104,3 +2104,329 @@ ul {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* ==========================================================================
+   HERO FULLSCREEN SLIDER / CAROUSEL
+   Full-viewport image slideshow with overlaid text and arrow navigation
+   ========================================================================== */
+
+/* Minimal Slider Header: transparent over hero, only logo + hamburger visible */
+.slider-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    transition: background 0.4s ease;
+}
+
+.slider-header.scrolled {
+    background: var(--header-bg) !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: var(--shadow-card) !important;
+}
+
+.slider-header .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Hide desktop menu links when slider header */
+.slider-header .nav-menu {
+    display: none !important;
+}
+
+/* Hide nav-socials and get-in-touch button on slider header */
+.slider-header .nav-actions .nav-socials,
+.slider-header .nav-actions .btn-touch {
+    display: none !important;
+}
+
+/* Show theme toggle only on desktop for slider header */
+.slider-header .nav-actions .theme-toggle-single .theme-toggle-label {
+    display: none;
+}
+
+/* Hamburger always visible on slider header */
+.slider-header .hamburger-btn {
+    display: flex !important;
+}
+
+/* On slider header, hamburger bars should be white when not scrolled */
+.slider-header:not(.scrolled) .hamburger-btn span {
+    background: #fff;
+}
+
+.slider-header:not(.scrolled) .theme-toggle-single {
+    color: #fff;
+    border-color: rgba(255,255,255,0.3);
+}
+
+.slider-header:not(.scrolled) .brand-logo-img {
+    filter: brightness(1.3) drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+/* ==================== SLIDER SECTION ==================== */
+.hero-slider-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-slider-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual Slide */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    z-index: 1;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+/* Slide Background Image */
+.hero-slide-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.05);
+    transition: transform 8s ease-out;
+}
+
+.hero-slide.active .hero-slide-bg {
+    transform: scale(1);
+}
+
+/* Dark Overlay for Text Readability */
+.hero-slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.35) 0%,
+                rgba(0, 0, 0, 0.15) 40%,
+                rgba(0, 0, 0, 0.55) 100%),
+                linear-gradient(90deg,
+                rgba(0, 0, 0, 0.5) 0%,
+                rgba(0, 0, 0, 0.1) 60%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Slide Content Overlay */
+.hero-slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    padding: 3rem 4rem 5rem;
+    max-width: 700px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+}
+
+.hero-slide.active .hero-slide-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide Eyebrow */
+.slide-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+}
+
+/* Slide Title */
+.slide-title {
+    font-family: var(--font-main);
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+/* Slide Description */
+.slide-description {
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.75rem;
+    max-width: 520px;
+}
+
+/* Slide Action Buttons */
+.slide-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+/* ==================== SLIDER ARROWS ==================== */
+.hero-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-slider-arrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.hero-slider-prev {
+    left: 2rem;
+}
+
+.hero-slider-next {
+    right: 2rem;
+}
+
+/* ==================== SLIDER DOTS ==================== */
+.hero-slider-dots {
+    position: absolute;
+    bottom: 2rem;
+    right: 4rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.slider-dot.active {
+    background: #fff;
+    border-color: #fff;
+    transform: scale(1.2);
+}
+
+.slider-dot:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* ==================== SLIDER RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .hero-slide-content {
+        padding: 2rem 1.5rem 6rem;
+        max-width: 100%;
+    }
+    
+    .slide-title {
+        font-size: clamp(1.4rem, 6vw, 2rem);
+    }
+    
+    .slide-description {
+        font-size: 0.85rem;
+        max-width: 100%;
+    }
+    
+    .hero-slider-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-slider-prev {
+        left: 1rem;
+    }
+    
+    .hero-slider-next {
+        right: 1rem;
+    }
+    
+    .hero-slider-dots {
+        bottom: 1.5rem;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .slider-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    /* On mobile, hide theme toggle in slider header - only show hamburger and logo */
+    .slider-header .nav-actions {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-slide-content {
+        padding: 1.5rem 1.25rem 5.5rem;
+    }
+    
+    .slide-title {
+        font-size: 1.3rem;
+    }
+    
+    .slide-description {
+        font-size: 0.8rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .slide-actions .btn-pill {
+        font-size: 0.75rem;
+        padding: 0.55rem 1.25rem;
+    }
+}

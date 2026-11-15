@@ -363,4 +363,139 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+
+    // -------------------------------------------------------------
+    // HERO SLIDER / CAROUSEL
+    // Auto-advances every 5 seconds, with left/right arrow navigation
+    // and dot indicator navigation
+    // -------------------------------------------------------------
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const sliderPrev = document.querySelector('.hero-slider-prev');
+    const sliderNext = document.querySelector('.hero-slider-next');
+    const sliderDots = document.querySelectorAll('.slider-dot');
+    
+    if (heroSlides.length > 0) {
+        let currentSlide = 0;
+        let slideInterval;
+        const SLIDE_DURATION = 5000; // 5 seconds per slide
+        
+        function goToSlide(index) {
+            // Remove active from current
+            heroSlides[currentSlide].classList.remove('active');
+            if (sliderDots[currentSlide]) sliderDots[currentSlide].classList.remove('active');
+            
+            // Wrap around
+            currentSlide = (index + heroSlides.length) % heroSlides.length;
+            
+            // Add active to new
+            heroSlides[currentSlide].classList.add('active');
+            if (sliderDots[currentSlide]) sliderDots[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+        
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+        
+        function startAutoSlide() {
+            stopAutoSlide();
+            slideInterval = setInterval(nextSlide, SLIDE_DURATION);
+        }
+        
+        function stopAutoSlide() {
+            if (slideInterval) {
+                clearInterval(slideInterval);
+                slideInterval = null;
+            }
+        }
+        
+        // Arrow button listeners
+        if (sliderPrev) {
+            sliderPrev.addEventListener('click', () => {
+                prevSlide();
+                startAutoSlide(); // Reset timer after manual nav
+            });
+        }
+        
+        if (sliderNext) {
+            sliderNext.addEventListener('click', () => {
+                nextSlide();
+                startAutoSlide(); // Reset timer after manual nav
+            });
+        }
+        
+        // Dot navigation listeners
+        sliderDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const targetSlide = parseInt(dot.getAttribute('data-slide'), 10);
+                goToSlide(targetSlide);
+                startAutoSlide(); // Reset timer after manual nav
+            });
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+                startAutoSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+                startAutoSlide();
+            }
+        });
+        
+        // Touch/Swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const sliderSection = document.querySelector('.hero-slider-section');
+        
+        if (sliderSection) {
+            sliderSection.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            
+            sliderSection.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) { // Minimum swipe distance
+                    if (diff > 0) {
+                        nextSlide(); // Swipe left = next
+                    } else {
+                        prevSlide(); // Swipe right = prev
+                    }
+                    startAutoSlide();
+                }
+            }, { passive: true });
+        }
+        
+        // Start auto-sliding
+        startAutoSlide();
+        
+        // Pause on hover (desktop only)
+        if (sliderSection && window.matchMedia('(hover: hover)').matches) {
+            sliderSection.addEventListener('mouseenter', stopAutoSlide);
+            sliderSection.addEventListener('mouseleave', startAutoSlide);
+        }
+    }
+
+    // -------------------------------------------------------------
+    // SLIDER HEADER: Add scrolled class on scroll for background
+    // -------------------------------------------------------------
+    const sliderHeader = document.querySelector('.slider-header');
+    if (sliderHeader) {
+        function updateSliderHeader() {
+            if (window.scrollY > 80) {
+                sliderHeader.classList.add('scrolled');
+            } else {
+                sliderHeader.classList.remove('scrolled');
+            }
+        }
+        window.addEventListener('scroll', updateSliderHeader, { passive: true });
+        updateSliderHeader(); // initial state
+    }
+
 });

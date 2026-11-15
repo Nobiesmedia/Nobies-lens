@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nobies Lens Photography | Editorial Wedding, Graduation, Corporate &amp; Lifestyle</title>
-    <meta name="description" content="Nobies Lens Photography - Premier editorial photography studio. We do not merely take photographs; we tell a compelling story that last a lifetime. Specializing in Lifestyle, Graduations (Issahaku, Dora, Angelique, Jibril), Corporate &amp; Diplomatic Events, Event Parties, and Weddings.">
+    <meta name="description" content="Nobies Lens Photography - Premier editorial photography studio. We do not merely take photographs; we tell a compelling story that last a lifetime. Specializing in Lifestyle, Graduations, Corporate &amp; Diplomatic Events, Event Parties, and Weddings.">
     
     <!-- Google Fonts: Poppins (Clean, Modern & Editorial) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,47 +23,23 @@
     <div class="custom-cursor-dot"></div>
     <div class="custom-cursor-circle"></div>
 
-    <!-- MAIN NAVIGATION HEADER -->
-    <header class="main-header">
+    <!-- MAIN NAVIGATION HEADER (Minimal: Logo + Hamburger Only) -->
+    <header class="main-header slider-header">
         <div class="container nav-container">
             <!-- Brand 3D Golden Logo -->
             <a href="#home" class="brand-logo" aria-label="Nobies Lens Photography">
                 <img src="assets/images/nobies-lens-logo.png" alt="Nobies Lens Photography Official Logo" class="brand-logo-img">
             </a>
 
-            <!-- Desktop Menu Links -->
-            <nav class="nav-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="portfolio.html" target="_blank" class="nav-link">Portfolio</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="pricing.html" target="_blank" class="nav-link">Price List</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
-
-            <!-- Navigation Actions: Single Indicator Theme Toggle + Contact Button -->
+            <!-- Navigation Actions: Theme Toggle (hidden on mobile via CSS) -->
             <div class="nav-actions">
                 <!-- Single Theme Toggle Indicator -->
                 <button class="theme-toggle-single" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Theme (Cream &amp; White / All-Black)">
                     <span class="theme-toggle-icon"><i class="fa-solid fa-moon"></i></span>
-                    <span class="theme-toggle-label">Theme</span>
                 </button>
-
-                <div class="nav-socials">
-                    <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20inquire%20about%20a%20photoshoot" target="_blank" class="nav-social-icon whatsapp" title="Chat on WhatsApp">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social" target="_blank" class="nav-social-icon instagram link-instagram-direct" title="Follow Nobies Lens on Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                </div>
-
-                <!-- Signature Get in Touch Button -->
-                <a href="#contact" class="btn btn-touch btn-sm">
-                    Get in Touch <span class="btn-arrow">&#9658;</span>
-                </a>
             </div>
 
-            <!-- Hamburger Button for Mobile -->
+            <!-- Hamburger Button -->
             <button class="hamburger-btn" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
@@ -101,25 +77,161 @@
         </div>
     </div>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero-fullbleed-section">
-        <div class="hero-cinematic-frame">
-            <img src="assets/images/hero-event-horizontal.jpg" alt="Nobies Lens Photography" class="hero-cinematic-bg">
-            <div class="hero-cinematic-overlay"></div>
-            <div class="hero-content-overlaid">
-                <div class="hero-eyebrow">ACCRA &bull; GHANA &bull; INTERNATIONAL &bull; EDITORIAL</div>
-                <h1 class="hero-main-title">Capturing Life's Most<br>Prestigious Moments.</h1>
-                <p class="hero-subdescription">We do not merely take photographs; we tell a compelling story that last a lifetime.<br>Lifestyle, Graduations, Corporate Events, Parties &amp; Weddings.</p>
-                <div class="hero-pill-actions">
-                    <a href="#contact" class="btn-pill btn-pill-primary">Get in Touch &rarr;</a>
-                    <a href="portfolio.html" target="_blank" class="btn-pill btn-pill-outline">View the Portfolio</a>
-                </div>
-                <div class="hero-stats-row">
-                    <div class="hero-stat-chip"><span class="stat-num">500+</span><span class="stat-lbl">Stories Told</span></div>
-                    <div class="hero-stat-chip"><span class="stat-num">4.9&#9733;</span><span class="stat-lbl">Client Trust</span></div>
-                    <div class="hero-stat-chip"><span class="stat-num">100%</span><span class="stat-lbl">Heirloom Grade</span></div>
+    <!-- ============================================================
+         HERO FULLSCREEN SLIDER / CAROUSEL
+         Each slide: full-screen background image + overlaid text
+         Auto-advances + left/right arrows
+         ============================================================ -->
+    <section id="home" class="hero-slider-section">
+        <div class="hero-slider-track">
+            <!-- Slide 1: Welcome -->
+            <div class="hero-slide active" data-slide="0">
+                <img src="assets/images/landing/slide-9.jpeg" alt="Nobies Lens Photography" class="hero-slide-bg" loading="eager">
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-content">
+                    <div class="slide-eyebrow">ACCRA &bull; GHANA &bull; INTERNATIONAL</div>
+                    <h1 class="slide-title">Welcome to<br>Nobies Lens Photography</h1>
+                    <p class="slide-description">We do not merely take photographs; we tell a compelling story that lasts a lifetime.</p>
+                    <div class="slide-actions">
+                        <a href="#contact" class="btn-pill btn-pill-primary">Get in Touch &rarr;</a>
+                        <a href="portfolio.html" target="_blank" class="btn-pill btn-pill-outline">View Portfolio</a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Slide 2: Lifestyle -->
+            <div class="hero-slide" data-slide="1">
+                <img src="assets/images/landing/slide-2.jpeg" alt="Lifestyle Photography" class="hero-slide-bg" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-content">
+                    <div class="slide-eyebrow">EDITORIAL &bull; LIFESTYLE &bull; FASHION</div>
+                    <h1 class="slide-title">Lifestyle &amp;<br>Portrait Sessions</h1>
+                    <p class="slide-description">From editorial fashion to personal branding, we create stunning lifestyle portraits that capture your unique essence and style.</p>
+                    <div class="slide-actions">
+                        <a href="pricing.html#lifestyle" target="_blank" class="btn-pill btn-pill-primary">View Packages &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Events & Parties -->
+            <div class="hero-slide" data-slide="2">
+                <img src="assets/images/landing/slide-1.jpeg" alt="Event Photography" class="hero-slide-bg" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-content">
+                    <div class="slide-eyebrow">CELEBRATIONS &bull; GALAS &bull; PARTIES</div>
+                    <h1 class="slide-title">Corporate Events<br>&amp; Celebrations</h1>
+                    <p class="slide-description">Every milestone deserves to be documented with precision and artistry. From intimate gatherings to grand galas, we capture the energy and emotion.</p>
+                    <div class="slide-actions">
+                        <a href="pricing.html#corporate" target="_blank" class="btn-pill btn-pill-primary">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Studio Portraits -->
+            <div class="hero-slide" data-slide="3">
+                <img src="assets/images/landing/slide-4.jpeg" alt="Studio Portrait Photography" class="hero-slide-bg" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-content">
+                    <div class="slide-eyebrow">STUDIO &bull; CREATIVE &bull; ARCHIVAL</div>
+                    <h1 class="slide-title">Studio Portraits<br>That Tell Stories</h1>
+                    <p class="slide-description">Crafted in our professional studio with expert lighting and creative direction. Every frame is a masterpiece designed for lasting impact.</p>
+                    <div class="slide-actions">
+                        <a href="#contact" class="btn-pill btn-pill-primary">Book a Session &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Outdoor Lifestyle -->
+            <div class="hero-slide" data-slide="4">
+                <img src="assets/images/landing/slide-3.jpeg" alt="Outdoor Lifestyle" class="hero-slide-bg" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-content">
+                    <div class="slide-eyebrow">OUTDOOR &bull; NATURAL LIGHT &bull; LIFESTYLE</div>
+                    <h1 class="slide-title">Outdoor Fashion<br>&amp; Lifestyle</h1>
+                    <p class="slide-description">Natural light, stunning locations, and effortless poise. Our outdoor sessions blend fashion photography with authentic storytelling.</p>
+                    <div class="slide-actions">
+                        <a href="portfolio.html?cat=lifestyle" target="_blank" class="btn-pill btn-pill-primary">See Gallery &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Academic / Corporate -->
+            <div class="hero-slide" data-slide="5">
+                <img src="assets/images/landing/slide-5.jpeg" alt="Corporate Photography" class="hero-slide-bg" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-content">
+                    <div class="slide-eyebrow">CONFERENCES &bull; SEMINARS &bull; CORPORATE</div>
+                    <h1 class="slide-title">Conference &amp;<br>Corporate Coverage</h1>
+                    <p class="slide-description">Professional documentation of conferences, seminars, and corporate events. Discreet, dignified, and publication-ready imagery.</p>
+                    <div class="slide-actions">
+                        <a href="pricing.html#corporate" target="_blank" class="btn-pill btn-pill-primary">Corporate Packages &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Winter / International -->
+            <div class="hero-slide" data-slide="6">
+                <img src="assets/images/landing/slide-6.jpeg" alt="International Photography" class="hero-slide-bg" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-content">
+                    <div class="slide-eyebrow">INTERNATIONAL &bull; TRAVEL &bull; EDITORIAL</div>
+                    <h1 class="slide-title">International<br>Editorial Sessions</h1>
+                    <p class="slide-description">From Accra to the world. Nobies Lens captures compelling stories across continents with the same editorial excellence and creative vision.</p>
+                    <div class="slide-actions">
+                        <a href="#contact" class="btn-pill btn-pill-primary">Inquire Now &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Seminar Coverage -->
+            <div class="hero-slide" data-slide="7">
+                <img src="assets/images/landing/slide-8.jpeg" alt="Seminar Coverage" class="hero-slide-bg" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-content">
+                    <div class="slide-eyebrow">ACADEMIC &bull; SEMINARS &bull; DOCUMENTATION</div>
+                    <h1 class="slide-title">Academic &amp;<br>Seminar Coverage</h1>
+                    <p class="slide-description">Capturing the energy of learning environments, academic achievements, and intellectual pursuits with clarity and professionalism.</p>
+                    <div class="slide-actions">
+                        <a href="#contact" class="btn-pill btn-pill-primary">Get a Quote &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Contact / CTA -->
+            <div class="hero-slide" data-slide="8">
+                <img src="assets/images/landing/slide-7.jpeg" alt="Contact Nobies Lens" class="hero-slide-bg" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+                <div class="hero-slide-content">
+                    <div class="slide-eyebrow">LET'S CREATE TOGETHER</div>
+                    <h1 class="slide-title">Ready to Tell<br>Your Story?</h1>
+                    <p class="slide-description">Whether it's a graduation, lifestyle session, corporate event, or wedding, reach out today and let us immortalize your most prestigious moments.</p>
+                    <div class="slide-actions">
+                        <a href="https://wa.me/212706633200?text=Hello%20Nobies%20Lens%20Photography%2C%20I%20would%20like%20to%20inquire%20about%20a%20photoshoot" target="_blank" class="btn-pill btn-pill-primary"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                        <a href="#contact" class="btn-pill btn-pill-outline">Contact Form</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation Arrows -->
+        <button class="hero-slider-arrow hero-slider-prev" aria-label="Previous slide">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="hero-slider-arrow hero-slider-next" aria-label="Next slide">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Slide Indicator Dots -->
+        <div class="hero-slider-dots">
+            <button class="slider-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+            <button class="slider-dot" data-slide="1" aria-label="Go to slide 2"></button>
+            <button class="slider-dot" data-slide="2" aria-label="Go to slide 3"></button>
+            <button class="slider-dot" data-slide="3" aria-label="Go to slide 4"></button>
+            <button class="slider-dot" data-slide="4" aria-label="Go to slide 5"></button>
+            <button class="slider-dot" data-slide="5" aria-label="Go to slide 6"></button>
+            <button class="slider-dot" data-slide="6" aria-label="Go to slide 7"></button>
+            <button class="slider-dot" data-slide="7" aria-label="Go to slide 8"></button>
+            <button class="slider-dot" data-slide="8" aria-label="Go to slide 9"></button>
         </div>
     </section>
 
@@ -482,7 +594,7 @@
             <div id="booking" class="booking-container">
                 <div class="booking-info">
                     <div class="section-tag">Reserve Your Session</div>
-                    <h3>Let’s Create Something Extraordinary Together.</h3>
+                    <h3>Let's Create Something Extraordinary Together.</h3>
                     <p>
                         Whether preparing for your graduation milestone, corporate summit, lifestyle portrait, or wedding, share your details below to begin your story with Nobies Lens.
                     </p>
