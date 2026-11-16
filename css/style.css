@@ -9,12 +9,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&display=swap');
 
 :root, [data-theme="light"] {
-    /* Cream & White Theme Swatch */
-    --color-bg-primary: #FFFFFF;
-    --color-bg-secondary: #F6F2E9;  /* Porcelain Warm Cream */
-    --color-bg-tertiary: #EFE7DA;   /* Almond Warm Cream */
-    --color-bg-card: #FFFFFF;
-    --color-bg-elevated: #FAF6EF;
+    /* Cream & Warm Cream Palette (No Pure White Background) */
+    --color-bg-primary: #F9F5EC;    /* Soft Warm Linen Cream */
+    --color-bg-secondary: #EFE7DA;  /* Rich Almond Warm Cream */
+    --color-bg-tertiary: #E6DCB8;   /* Warm Latte Cream */
+    --color-bg-card: #FDFBF7;       /* Delicate Butter Cream for Cards */
+    --color-bg-elevated: #F5EFE3;   /* Layered Soft Cream */
     
     --color-text-main: #000000;
     --color-text-muted: #111114;
@@ -46,7 +46,7 @@
     --shadow-elevated: 0 16px 40px rgba(40, 30, 15, 0.09);
     --shadow-amber: 0 6px 20px rgba(194, 150, 54, 0.2);
 
-    --header-bg: rgba(255, 255, 255, 0.95);
+    --header-bg: rgba(249, 245, 236, 0.96);
     --topbar-bg: #EFE7DA;
     --footer-bg: #0D0E12;
     --footer-text: #FAF8F5;
@@ -3003,4 +3003,128 @@ ul {
 [data-theme="dark"] .form-input::placeholder,
 [data-theme="dark"] .form-textarea::placeholder {
     color: #B5AD9F !important;
+}
+
+
+/* ==========================================================================
+   DARK MEDIA OVERLAY RULES (ALWAYS WHITE TEXT OVER DARK IMAGES / OVERLAYS)
+   Ensures headings, titles and descriptions are bright white over dark media
+   ========================================================================== */
+
+/* 1. Hero Fullscreen Slider Overlaid Text */
+.hero-slide-content,
+.hero-slide-content * {
+    color: #FFFFFF !important;
+}
+
+.hero-slide-content .slide-eyebrow {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.hero-slide-content .slide-title {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+.hero-slide-content .slide-description {
+    color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.hero-slide-content .btn-pill-primary {
+    color: #FFFFFF !important;
+}
+
+.hero-slide-content .btn-pill-outline {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 2. What We Do Cinematic 3-Card Layout (Dark Photography Cards) */
+.what-we-do-card,
+.what-we-do-content,
+.what-we-do-card-title {
+    color: #FFFFFF !important;
+}
+
+.what-we-do-category {
+    color: var(--color-gold-light) !important;
+}
+
+.what-we-do-link-hint {
+    color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* 3. Portfolio & Gallery Image Overlays */
+.gallery-overlay,
+.gallery-overlay * {
+    color: #FFFFFF !important;
+}
+
+.gallery-overlay .gallery-title {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+}
+
+.gallery-overlay .gallery-category-pill {
+    color: #FFFFFF !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.gallery-overlay .gallery-meta,
+.gallery-overlay .gallery-meta * {
+    color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.gallery-zoom-icon {
+    color: #FFFFFF !important;
+}
+
+/* 4. Bottom Social Bar (Dark Translucent Glass) */
+.landing-social-bar,
+.landing-social-btn,
+.landing-social-btn i {
+    color: #FFFFFF !important;
+}
+
+.landing-scroll-hint,
+.landing-scroll-hint i {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* 5. Solid Brand Buttons */
+.btn-touch,
+.btn-whatsapp,
+.btn-pill-primary {
+    color: #FFFFFF !important;
+}
+
+/* 6. Main Footer (Dark Luxury Background) */
+.main-footer,
+.main-footer p,
+.main-footer .footer-link,
+.main-footer .footer-contact-item,
+.main-footer .footer-contact-item span,
+.main-footer .footer-contact-item a,
+.main-footer .footer-bottom,
+.main-footer .footer-social-btn {
+    color: rgba(250, 248, 245, 0.85) !important;
+}
+
+.main-footer .footer-col h4 {
+    color: var(--color-gold-light) !important;
+}
+
+.main-footer .footer-social-btn i {
+    color: #FFFFFF !important;
+}
+
+/* 7. Fullscreen Lightbox */
+.lightbox-modal,
+.lightbox-caption-bar,
+.lightbox-caption-text h3,
+.lightbox-caption-text p,
+.lightbox-close-btn,
+.lightbox-prev-btn,
+.lightbox-next-btn {
+    color: #FFFFFF !important;
 }
