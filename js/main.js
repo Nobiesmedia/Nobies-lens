@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Nobies Lens Photography",
         whatsappApiNumber: "212706633200",
         phoneCallNumber: "0706633200",
-        instagramUrl: "https://www.instagram.com/invites/contact/?i=j5xaaqxcib7k&utm_content=c10c3m5&utm_source=ig&utm_medium=social",
+        instagramUrl: "https://www.instagram.com/nobies_lens/",
         tiktokUrl: "https://www.tiktok.com/@nobies_lens",
         facebookUrl: "https://www.facebook.com/share/1a6Kfqfyds/",
         email: "noblebright18@gmail.com"
@@ -103,13 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------
-    // 3. Mobile Navigation Drawer Toggle
-    // -------------------------------------------------------------
+    // 3. Mobile Navigation Drawer Toggle & Outside-Click Close
     const hamburgerBtn = document.querySelector('.hamburger-btn');
     const mobileNav = document.querySelector('.mobile-nav');
     const mobileOverlay = document.querySelector('.mobile-overlay');
+    const mobileCloseBtn = document.querySelector('.mobile-close-btn');
 
-    if (hamburgerBtn && mobileNav && mobileOverlay) {
+    if (mobileNav && mobileOverlay) {
         function openMobileNav() {
             mobileNav.classList.add('open');
             mobileOverlay.classList.add('open');
@@ -122,15 +122,25 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
         }
 
-        hamburgerBtn.addEventListener('click', openMobileNav);
-        mobileOverlay.addEventListener('click', closeMobileNav);
+        if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileNav);
+        if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeMobileNav);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileNav);
 
+        // Close on clicking any link inside the mobile drawer
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', closeMobileNav);
         });
+
+        // Close when clicking anywhere outside the opened mobile menu
+        document.addEventListener('click', (e) => {
+            if (mobileNav.classList.contains('open')) {
+                if (!mobileNav.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                    closeMobileNav();
+                }
+            }
+        });
     }
 
-    // -------------------------------------------------------------
     // 4. Portfolio Filter Tabs (For portfolio.html & preview)
     // -------------------------------------------------------------
     const filterButtons = document.querySelectorAll('.gallery-filter-tabs .filter-btn');

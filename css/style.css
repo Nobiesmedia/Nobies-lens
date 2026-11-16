@@ -2673,3 +2673,225 @@ ul {
         padding: 1.75rem 1.25rem !important;
     }
 }
+
+
+/* ==========================================================================
+   HEADER RIGHT CONTROLS: THEME TOGGLE & HAMBURGER ON THE RIGHT
+   ========================================================================== */
+.nav-right-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-left: auto;
+}
+
+.slider-header .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Ensure theme toggle displays clearly on the right for both desktop & mobile */
+.nav-right-group .theme-toggle-single {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.65rem;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.nav-right-group .theme-toggle-single .theme-toggle-label {
+    display: none !important;
+}
+
+/* On mobile, keep theme toggle button beside hamburger on the right */
+@media (max-width: 768px) {
+    .nav-right-group {
+        display: inline-flex !important;
+        gap: 0.65rem;
+    }
+    .nav-right-group .theme-toggle-single {
+        display: inline-flex !important;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+    }
+}
+
+/* ==========================================================================
+   MOBILE MENU CLOSE BUTTON
+   ========================================================================== */
+.mobile-close-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(194, 150, 54, 0.15);
+    border: 1px solid var(--border-subtle);
+    color: var(--color-text-main);
+    font-size: 1.75rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.25s ease;
+}
+
+.mobile-close-btn:hover {
+    background: var(--color-gold);
+    color: #0A0A0C;
+    transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   WHAT WE DO SECTION (CINEMATIC 3-CARD LAYOUT AS IN VIDEO)
+   ========================================================================== */
+.what-we-do-section {
+    padding: 6rem 0;
+    position: relative;
+    background: var(--color-bg-primary);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.what-we-do-header {
+    text-align: left;
+    max-width: 780px;
+    margin-bottom: 3.5rem;
+}
+
+.what-we-do-title {
+    font-family: var(--font-main);
+    font-size: clamp(2rem, 3.8vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-text-main);
+    margin: 0.65rem 0 1rem;
+}
+
+.what-we-do-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    max-width: 620px;
+}
+
+.what-we-do-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-bottom: 3.5rem;
+}
+
+.what-we-do-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    display: block;
+    text-decoration: none;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-card);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #000;
+}
+
+.what-we-do-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elevated);
+    border-color: var(--color-gold);
+}
+
+.what-we-do-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    display: block;
+}
+
+.what-we-do-card:hover .what-we-do-img {
+    transform: scale(1.06);
+}
+
+.what-we-do-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, 
+                rgba(10, 11, 14, 0.92) 0%, 
+                rgba(10, 11, 14, 0.45) 45%, 
+                rgba(10, 11, 14, 0.05) 100%);
+    pointer-events: none;
+}
+
+.what-we-do-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1.75rem;
+    color: #FFFFFF;
+    z-index: 2;
+}
+
+.what-we-do-category {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold-light);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.what-we-do-card-title {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin-bottom: 0.65rem;
+    letter-spacing: -0.01em;
+}
+
+.what-we-do-link-hint {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.what-we-do-card:hover .what-we-do-link-hint {
+    color: var(--color-gold);
+    transform: translateX(4px);
+}
+
+.what-we-do-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+    .what-we-do-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .what-we-do-card {
+        aspect-ratio: 4/5;
+        max-width: 440px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
