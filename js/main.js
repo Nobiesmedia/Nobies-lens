@@ -546,4 +546,92 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // -------------------------------------------------------------
+    // SCROLL-TRIGGERED TEXT ANIMATIONS (About Section)
+    // Triggers mask/reveal animation as user scrolls into the section
+    // -------------------------------------------------------------
+    const scrollAnimateSections = document.querySelectorAll('.scroll-animate-section');
+    if (scrollAnimateSections.length && 'IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        scrollAnimateSections.forEach(sec => revealObserver.observe(sec));
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        scrollAnimateSections.forEach(sec => sec.classList.add('in-view'));
+    }
+
+    // -------------------------------------------------------------
+    // AUTOMATIC ROTATING CAROUSELS (Right to Left)
+    // What We Do / Packages & Testimonials continuous rotation
+    // -------------------------------------------------------------
+    const rotatingTracks = [
+        { wrapperId: 'packagesCarouselWrapper', trackId: 'packagesCarouselTrack' },
+        { wrapperId: 'testimonialsCarouselWrapper', trackId: 'testimonialsCarouselTrack' }
+    ];
+
+    rotatingTracks.forEach(({ wrapperId, trackId }) => {
+        const wrapper = document.getElementById(wrapperId);
+        const track = document.getElementById(trackId);
+        if (!wrapper || !track) return;
+
+        // Viewport observer: Run animation when visible, pause when scrolled away
+        if ('IntersectionObserver' in window) {
+            const carouselObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        track.classList.remove('is-paused');
+                    } else {
+                        track.classList.add('is-paused');
+                    }
+                });
+            }, { threshold: 0.05 });
+            carouselObserver.observe(wrapper);
+        }
+
+        // Touch & Drag scrubbing interaction
+        let isDown = false;
+        let startX = 0;
+        let scrollLeft = 0;
+
+        wrapper.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - wrapper.offsetLeft;
+            scrollLeft = wrapper.scrollLeft;
+            track.classList.add('is-paused');
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isDown) {
+                isDown = false;
+                track.classList.remove('is-paused');
+            }
+        });
+
+        wrapper.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - wrapper.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            wrapper.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch support
+        wrapper.addEventListener('touchstart', () => {
+            track.classList.add('is-paused');
+        }, { passive: true });
+
+        wrapper.addEventListener('touchend', () => {
+            track.classList.remove('is-paused');
+        }, { passive: true });
+    });
+
 });

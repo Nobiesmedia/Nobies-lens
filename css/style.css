@@ -1082,6 +1082,69 @@ ul {
 .pillar-item p { font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.55; }
 
 /* ==========================================================================
+   SCROLL-TRIGGERED ABOUT TEXT ANIMATIONS (AS SEEN IN REFERENCE VIDEO)
+   ========================================================================== */
+.scroll-animate-section .reveal-line {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    margin-right: 0.35rem;
+}
+
+.scroll-animate-section .reveal-word {
+    display: inline-block;
+    transform: translateY(115%) rotate(2deg);
+    opacity: 0;
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.75s ease;
+    will-change: transform, opacity;
+}
+
+.scroll-animate-section .reveal-dash {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.4);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    margin: 0 0.35rem;
+    color: var(--color-gold);
+}
+
+.scroll-animate-section .scroll-reveal-item {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.8s ease;
+    transition-delay: calc(var(--reveal-order, 1) * 90ms);
+    will-change: transform, opacity;
+}
+
+/* When the section is scrolled into view (active) */
+.scroll-animate-section.in-view .reveal-word {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+}
+
+.scroll-animate-section.in-view .reveal-line:nth-child(1) .reveal-word:nth-child(1) { transition-delay: 0.12s; }
+.scroll-animate-section.in-view .reveal-line:nth-child(1) .reveal-word:nth-child(2) { transition-delay: 0.22s; }
+.scroll-animate-section.in-view .reveal-line:nth-child(1) .reveal-word:nth-child(3) { transition-delay: 0.32s; }
+
+.scroll-animate-section.in-view .reveal-dash {
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 0.42s;
+}
+
+.scroll-animate-section.in-view .reveal-line:nth-child(3) .reveal-word:nth-child(1) { transition-delay: 0.52s; }
+.scroll-animate-section.in-view .reveal-line:nth-child(3) .reveal-word:nth-child(2) { transition-delay: 0.62s; }
+.scroll-animate-section.in-view .reveal-line:nth-child(3) .reveal-word:nth-child(3) { transition-delay: 0.72s; }
+.scroll-animate-section.in-view .reveal-line:nth-child(3) .reveal-word:nth-child(4) { transition-delay: 0.82s; }
+
+.scroll-animate-section.in-view .scroll-reveal-item {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ==========================================================================
    PRICING LIST SECTION (WHITE BACKGROUND #FFFFFF)
    ========================================================================== */
 .pricing-section {
@@ -1478,12 +1541,62 @@ ul {
 .testimonials-section {
     padding: 5.5rem 0;
     background: var(--color-bg-primary);
+    overflow: hidden;
 }
 
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.75rem;
+}
+
+/* ROTATING TESTIMONIALS CAROUSEL (RIGHT TO LEFT CONTINUOUS MOTION) */
+.testimonials-carousel-wrapper {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    overflow: hidden;
+    padding: 1.5rem 0 2.5rem;
+    mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    cursor: grab;
+}
+
+.testimonials-carousel-wrapper:active {
+    cursor: grabbing;
+}
+
+.testimonials-carousel-track {
+    display: flex;
+    gap: 1.75rem;
+    width: max-content;
+    will-change: transform;
+    animation: rotateTestimonialsRightToLeft 42s linear infinite;
+}
+
+.testimonials-carousel-wrapper:hover .testimonials-carousel-track {
+    animation-play-state: paused;
+}
+
+.testimonials-carousel-track.is-paused {
+    animation-play-state: paused;
+}
+
+.testimonials-carousel-track .testimonial-card {
+    width: 380px;
+    min-height: 220px;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+@keyframes rotateTestimonialsRightToLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 0.875rem));
+    }
 }
 
 .testimonial-card {
@@ -2882,6 +2995,55 @@ ul {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.75rem;
     margin-bottom: 3.5rem;
+}
+
+/* ROTATING PACKAGES CAROUSEL (RIGHT TO LEFT CONTINUOUS MOTION) */
+.packages-carousel-wrapper {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    overflow: hidden;
+    padding: 1rem 0 3.5rem;
+    mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    cursor: grab;
+}
+
+.packages-carousel-wrapper:active {
+    cursor: grabbing;
+}
+
+.packages-carousel-track {
+    display: flex;
+    gap: 1.75rem;
+    width: max-content;
+    will-change: transform;
+    animation: rotatePackagesRightToLeft 36s linear infinite;
+}
+
+.packages-carousel-wrapper:hover .packages-carousel-track {
+    animation-play-state: paused;
+}
+
+.packages-carousel-track.is-paused {
+    animation-play-state: paused;
+}
+
+.packages-carousel-track .what-we-do-card {
+    width: 320px;
+    height: 430px;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+@keyframes rotatePackagesRightToLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 0.875rem));
+    }
 }
 
 .what-we-do-card {
