@@ -1082,66 +1082,90 @@ ul {
 .pillar-item p { font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.55; }
 
 /* ==========================================================================
-   SCROLL-TRIGGERED ABOUT TEXT ANIMATIONS (AS SEEN IN REFERENCE VIDEO)
+   CONVERGING SPLIT-TEXT ANIMATION (ABOUT SECTION)
+   Some text moves from left, some moves from right, joining together in center
    ========================================================================== */
-.scroll-animate-section .reveal-line {
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: top;
-    margin-right: 0.35rem;
+.about-section {
+    overflow-x: clip;
 }
 
-.scroll-animate-section .reveal-word {
+.about-split-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.65rem;
+    line-height: 1.25;
+    margin: 0.65rem 0 1rem;
+}
+
+/* Moves in from Left */
+.split-anim-left {
     display: inline-block;
-    transform: translateY(115%) rotate(2deg);
     opacity: 0;
-    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
-                opacity 0.75s ease;
+    transform: translateX(-150px);
+    transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform, opacity;
 }
 
-.scroll-animate-section .reveal-dash {
+/* Moves in from Right */
+.split-anim-right {
     display: inline-block;
     opacity: 0;
-    transform: scale(0.4);
-    transition: transform 0.6s ease, opacity 0.6s ease;
-    margin: 0 0.35rem;
+    transform: translateX(150px);
+    transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+/* Center connector (Dash) */
+.split-anim-center {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                opacity 0.6s ease;
+    transition-delay: 0.35s;
     color: var(--color-gold);
 }
 
-.scroll-animate-section .scroll-reveal-item {
+.about-text-left {
     opacity: 0;
-    transform: translateY(28px);
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                opacity 0.8s ease;
-    transition-delay: calc(var(--reveal-order, 1) * 90ms);
+    transform: translateX(-110px);
+    transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.85s ease;
+    transition-delay: 0.25s;
     will-change: transform, opacity;
 }
 
-/* When the section is scrolled into view (active) */
-.scroll-animate-section.in-view .reveal-word {
-    transform: translateY(0) rotate(0);
-    opacity: 1;
+.about-visual.split-anim-right {
+    opacity: 0;
+    transform: translateX(130px);
+    transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.95s ease;
+    transition-delay: 0.2s;
+    will-change: transform, opacity;
 }
 
-.scroll-animate-section.in-view .reveal-line:nth-child(1) .reveal-word:nth-child(1) { transition-delay: 0.12s; }
-.scroll-animate-section.in-view .reveal-line:nth-child(1) .reveal-word:nth-child(2) { transition-delay: 0.22s; }
-.scroll-animate-section.in-view .reveal-line:nth-child(1) .reveal-word:nth-child(3) { transition-delay: 0.32s; }
+/* When .in-view is triggered on scroll, left and right join together */
+.about-section.in-view .split-anim-left {
+    opacity: 1;
+    transform: translateX(0);
+}
 
-.scroll-animate-section.in-view .reveal-dash {
+.about-section.in-view .split-anim-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-section.in-view .split-anim-center {
+    opacity: 1;
     transform: scale(1);
-    opacity: 1;
-    transition-delay: 0.42s;
 }
 
-.scroll-animate-section.in-view .reveal-line:nth-child(3) .reveal-word:nth-child(1) { transition-delay: 0.52s; }
-.scroll-animate-section.in-view .reveal-line:nth-child(3) .reveal-word:nth-child(2) { transition-delay: 0.62s; }
-.scroll-animate-section.in-view .reveal-line:nth-child(3) .reveal-word:nth-child(3) { transition-delay: 0.72s; }
-.scroll-animate-section.in-view .reveal-line:nth-child(3) .reveal-word:nth-child(4) { transition-delay: 0.82s; }
-
-.scroll-animate-section.in-view .scroll-reveal-item {
-    transform: translateY(0);
+.about-section.in-view .about-text-left {
     opacity: 1;
+    transform: translateX(0);
 }
 
 /* ==========================================================================
@@ -1550,7 +1574,7 @@ ul {
     gap: 1.75rem;
 }
 
-/* ROTATING TESTIMONIALS CAROUSEL (RIGHT TO LEFT CONTINUOUS MOTION) */
+/* STEP-BY-STEP ROTATING TESTIMONIALS CAROUSEL (RIGHT TO LEFT WITH 2-3s PAUSE) */
 .testimonials-carousel-wrapper {
     position: relative;
     width: 100vw;
@@ -1572,15 +1596,7 @@ ul {
     gap: 1.75rem;
     width: max-content;
     will-change: transform;
-    animation: rotateTestimonialsRightToLeft 42s linear infinite;
-}
-
-.testimonials-carousel-wrapper:hover .testimonials-carousel-track {
-    animation-play-state: paused;
-}
-
-.testimonials-carousel-track.is-paused {
-    animation-play-state: paused;
+    transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .testimonials-carousel-track .testimonial-card {
@@ -2073,18 +2089,18 @@ ul {
 }
 
 /* ==========================================================================
-   SINGLE THEME TOGGLE INDICATOR (1 BUTTON CLICK TOGGLE)
+   SINGLE THEME TOGGLE INDICATOR (REDUCED COMPACT SIZE)
    ========================================================================== */
 .theme-toggle-single {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.42rem 0.95rem;
+    gap: 0.38rem;
+    padding: 0.28rem 0.68rem;
     border-radius: 50px;
     border: 1px solid var(--border-subtle);
     background: var(--color-bg-card);
     color: var(--color-text-main);
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     font-weight: 500;
     font-family: var(--font-body);
     cursor: pointer;
@@ -2101,7 +2117,7 @@ ul {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
+    font-size: 0.72rem;
     transition: transform var(--transition-fast);
 }
 .theme-toggle-single:hover .theme-toggle-icon {
@@ -2117,8 +2133,8 @@ ul {
     width: 100%;
     justify-content: center;
     margin-bottom: 1rem;
-    padding: 0.65rem 1rem;
-    font-size: 0.88rem;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.78rem;
 }
 
 /* ==========================================================================
@@ -2997,7 +3013,7 @@ ul {
     margin-bottom: 3.5rem;
 }
 
-/* ROTATING PACKAGES CAROUSEL (RIGHT TO LEFT CONTINUOUS MOTION) */
+/* STEP-BY-STEP ROTATING PACKAGES CAROUSEL (RIGHT TO LEFT WITH 2-3s PAUSE) */
 .packages-carousel-wrapper {
     position: relative;
     width: 100vw;
@@ -3019,15 +3035,7 @@ ul {
     gap: 1.75rem;
     width: max-content;
     will-change: transform;
-    animation: rotatePackagesRightToLeft 36s linear infinite;
-}
-
-.packages-carousel-wrapper:hover .packages-carousel-track {
-    animation-play-state: paused;
-}
-
-.packages-carousel-track.is-paused {
-    animation-play-state: paused;
+    transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .packages-carousel-track .what-we-do-card {

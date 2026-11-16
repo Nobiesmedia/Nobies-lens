@@ -547,91 +547,132 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------
-    // SCROLL-TRIGGERED TEXT ANIMATIONS (About Section)
-    // Triggers mask/reveal animation as user scrolls into the section
+    // SCROLL-TRIGGERED ABOUT TEXT CONVERGENCE ANIMATION
+    // Some text moves from left, some from right, joining together
     // -------------------------------------------------------------
-    const scrollAnimateSections = document.querySelectorAll('.scroll-animate-section');
-    if (scrollAnimateSections.length && 'IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver((entries) => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection && 'IntersectionObserver' in window) {
+        const aboutObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
+                    aboutSection.classList.add('in-view');
                 }
             });
         }, {
             threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -40px 0px'
         });
-
-        scrollAnimateSections.forEach(sec => revealObserver.observe(sec));
-    } else {
-        // Fallback for browsers without IntersectionObserver
-        scrollAnimateSections.forEach(sec => sec.classList.add('in-view'));
+        aboutObserver.observe(aboutSection);
+    } else if (aboutSection) {
+        aboutSection.classList.add('in-view');
     }
 
     // -------------------------------------------------------------
-    // AUTOMATIC ROTATING CAROUSELS (Right to Left)
-    // What We Do / Packages & Testimonials continuous rotation
+    // STEP-BY-STEP ROTATING CAROUSELS (Right to Left with 2-3s Pause)
+    // Packages / What We Do & Testimonials
     // -------------------------------------------------------------
-    const rotatingTracks = [
-        { wrapperId: 'packagesCarouselWrapper', trackId: 'packagesCarouselTrack' },
-        { wrapperId: 'testimonialsCarouselWrapper', trackId: 'testimonialsCarouselTrack' }
-    ];
-
-    rotatingTracks.forEach(({ wrapperId, trackId }) => {
+    function initStepCarousel(wrapperId, trackId, pauseDuration = 2800) {
         const wrapper = document.getElementById(wrapperId);
         const track = document.getElementById(trackId);
         if (!wrapper || !track) return;
 
-        // Viewport observer: Run animation when visible, pause when scrolled away
-        if ('IntersectionObserver' in window) {
-            const carouselObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        track.classList.remove('is-paused');
-                    } else {
-                        track.classList.add('is-paused');
-                    }
-                });
-            }, { threshold: 0.05 });
-            carouselObserver.observe(wrapper);
+        const cards = track.children;
+        if (!cards.length) return;
+        const totalCards = cards.length;
+        const originalCount = Math.floor(totalCards / 2); // 6 original cards + 6 duplicate clones
+        
+        let currentIndex = 0;
+        let isPaused = false;
+        let isInViewport = true;
+        let slideTimer = null;
+        let isTransitioning = false;
+
+        function getCardStep() {
+            if (cards.length < 2) return 0;
+            const first = cards[0].getBoundingClientRect();
+            const second = cards[1].getBoundingClientRect();
+            return second.left - first.left;
         }
 
-        // Touch & Drag scrubbing interaction
-        let isDown = false;
-        let startX = 0;
-        let scrollLeft = 0;
+        function slideNext() {
+            if (isPaused || !isInViewport || isTransitioning) return;
+            isTransitioning = true;
+            currentIndex++;
+            
+            const step = getCardStep();
+            const targetX = -(currentIndex * step);
+            track.style.transition = 'transform 0.75s cubic-bezier(0.25, 1, 0.5, 1)';
+            track.style.transform = `translateX(${targetX}px)`;
 
-        wrapper.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - wrapper.offsetLeft;
-            scrollLeft = wrapper.scrollLeft;
-            track.classList.add('is-paused');
-        });
+            setTimeout(() => {
+                isTransitioning = false;
+                // Once we've stepped past the original set, loop seamlessly
+                if (currentIndex >= originalCount) {
+                    currentIndex = 0;
+                    track.style.transition = 'none';
+                    track.style.transform = 'translateX(0px)';
+                    void track.offsetWidth; // Force reflow
+                }
+            }, 750);
+        }
 
-        window.addEventListener('mouseup', () => {
-            if (isDown) {
-                isDown = false;
-                track.classList.remove('is-paused');
+        function startTimer() {
+            stopTimer();
+            slideTimer = setInterval(slideNext, pauseDuration + 750);
+        }
+
+        function stopTimer() {
+            if (slideTimer) {
+                clearInterval(slideTimer);
+                slideTimer = null;
             }
+        }
+
+        // Viewport awareness: Only run timer when the carousel is in view
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    isInViewport = entry.isIntersecting;
+                    if (isInViewport) {
+                        startTimer();
+                    } else {
+                        stopTimer();
+                    }
+                });
+            }, { threshold: 0.1 });
+            observer.observe(wrapper);
+        } else {
+            startTimer();
+        }
+
+        // Pause on mouse hover (so user can view or click)
+        wrapper.addEventListener('mouseenter', () => {
+            isPaused = true;
         });
 
-        wrapper.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - wrapper.offsetLeft;
-            const walk = (x - startX) * 1.5;
-            wrapper.scrollLeft = scrollLeft - walk;
+        wrapper.addEventListener('mouseleave', () => {
+            isPaused = false;
         });
 
-        // Touch support
+        // Touch support: pause when touched
         wrapper.addEventListener('touchstart', () => {
-            track.classList.add('is-paused');
+            isPaused = true;
         }, { passive: true });
 
         wrapper.addEventListener('touchend', () => {
-            track.classList.remove('is-paused');
+            isPaused = false;
         }, { passive: true });
-    });
+
+        // Handle window resize (recalculate offsets cleanly)
+        window.addEventListener('resize', () => {
+            const step = getCardStep();
+            track.style.transition = 'none';
+            track.style.transform = `translateX(${-currentIndex * step}px)`;
+        }, { passive: true });
+    }
+
+    // Initialize both carousels with 2.8s pause per card
+    initStepCarousel('packagesCarouselWrapper', 'packagesCarouselTrack', 2800);
+    initStepCarousel('testimonialsCarouselWrapper', 'testimonialsCarouselTrack', 2800);
 
 });
