@@ -16,10 +16,10 @@
     --color-bg-card: #FFFFFF;
     --color-bg-elevated: #FAF6EF;
     
-    --color-text-main: #141519;
-    --color-text-muted: #555968;
-    --color-text-subtle: #7E8394;
-    --color-text-dark: #0A0A0C;
+    --color-text-main: #000000;
+    --color-text-muted: #111114;
+    --color-text-subtle: #222227;
+    --color-text-dark: #000000;
     
     /* 3D Gold Accent matching Nobies Lens Logo */
     --color-gold: #C29636;
@@ -75,10 +75,10 @@
     --color-bg-card: #12141B;
     --color-bg-elevated: #171922;
     
-    --color-text-main: #FAF8F5;
-    --color-text-muted: #A6AAB8;
-    --color-text-subtle: #757988;
-    --color-text-dark: #FAF8F5;
+    --color-text-main: #FFFFFF;
+    --color-text-muted: #F8F4EC;
+    --color-text-subtle: #EDE5D8;
+    --color-text-dark: #FFFFFF;
     
     --color-gold: #F7CD60;
     --color-gold-light: #FAD36E;
@@ -2894,4 +2894,113 @@ ul {
         margin: 0 auto;
         width: 100%;
     }
+}
+
+
+/* ==========================================================================
+   GLOBAL THEME FONT COLOR SYSTEM
+   Light Mode = Solid Black Font (#000000)
+   Dark Mode  = Cream (#F8F4EC) & White (#FFFFFF) Font
+   ========================================================================== */
+
+/* LIGHT MODE: SOLID BLACK FONT */
+[data-theme="light"] body,
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] .section-title,
+[data-theme="light"] .page-hero-title,
+[data-theme="light"] .what-we-do-title,
+[data-theme="light"] .about-quote,
+[data-theme="light"] .pillar-item h4,
+[data-theme="light"] .pillar-item h5,
+[data-theme="light"] .booking-info h3,
+[data-theme="light"] .booking-detail-content h5,
+[data-theme="light"] .author-info h4,
+[data-theme="light"] .pricing-tier-name,
+[data-theme="light"] .pricing-price,
+[data-theme="light"] .mobile-nav-link,
+[data-theme="light"] .nav-link {
+    color: #000000 !important;
+}
+
+[data-theme="light"] p,
+[data-theme="light"] .text-muted,
+[data-theme="light"] .section-subtitle,
+[data-theme="light"] .page-hero-subtitle,
+[data-theme="light"] .what-we-do-subtitle,
+[data-theme="light"] .about-content p,
+[data-theme="light"] .pillar-item p,
+[data-theme="light"] .booking-info p,
+[data-theme="light"] .booking-detail-content p,
+[data-theme="light"] .form-group label,
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-select,
+[data-theme="light"] .form-textarea,
+[data-theme="light"] .testimonial-text,
+[data-theme="light"] .pricing-tier-desc,
+[data-theme="light"] .pricing-feature-item,
+[data-theme="light"] .pricing-feature-item span,
+[data-theme="light"] .filter-btn,
+[data-theme="light"] .pricing-nav-btn {
+    color: #111114 !important;
+}
+
+[data-theme="light"] .form-input::placeholder,
+[data-theme="light"] .form-textarea::placeholder {
+    color: #55555d !important;
+}
+
+/* DARK MODE: CREAM & WHITE FONT */
+[data-theme="dark"] body,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .page-hero-title,
+[data-theme="dark"] .what-we-do-title,
+[data-theme="dark"] .about-quote,
+[data-theme="dark"] .pillar-item h4,
+[data-theme="dark"] .pillar-item h5,
+[data-theme="dark"] .booking-info h3,
+[data-theme="dark"] .booking-detail-content h5,
+[data-theme="dark"] .author-info h4,
+[data-theme="dark"] .pricing-tier-name,
+[data-theme="dark"] .pricing-price,
+[data-theme="dark"] .mobile-nav-link,
+[data-theme="dark"] .nav-link {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .section-subtitle,
+[data-theme="dark"] .page-hero-subtitle,
+[data-theme="dark"] .what-we-do-subtitle,
+[data-theme="dark"] .about-content p,
+[data-theme="dark"] .pillar-item p,
+[data-theme="dark"] .booking-info p,
+[data-theme="dark"] .booking-detail-content p,
+[data-theme="dark"] .form-group label,
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea,
+[data-theme="dark"] .testimonial-text,
+[data-theme="dark"] .pricing-tier-desc,
+[data-theme="dark"] .pricing-feature-item,
+[data-theme="dark"] .pricing-feature-item span,
+[data-theme="dark"] .filter-btn,
+[data-theme="dark"] .pricing-nav-btn {
+    color: #F8F4EC !important; /* Elegant warm cream */
+}
+
+[data-theme="dark"] .form-input::placeholder,
+[data-theme="dark"] .form-textarea::placeholder {
+    color: #B5AD9F !important;
 }
