@@ -509,4 +509,41 @@ document.addEventListener('DOMContentLoaded', () => {
         updateSliderHeader(); // initial state
     }
 
+    // -------------------------------------------------------------
+    // INTERACTIVE HOVER TEXT & CARD ANIMATIONS (About & What We Do)
+    // Dynamic kinetic interaction inspired by UM6P showcase video
+    // -------------------------------------------------------------
+    const hoverTitles = document.querySelectorAll('.interactive-hover-title');
+    hoverTitles.forEach(title => {
+        const words = title.querySelectorAll('.anim-word');
+        if (!words.length) return;
+
+        title.addEventListener('mousemove', (e) => {
+            const rect = title.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+
+            words.forEach(word => {
+                const wordRect = word.getBoundingClientRect();
+                const wordCenter = wordRect.left - rect.left + (wordRect.width / 2);
+                const dist = Math.abs(mouseX - wordCenter);
+                const maxDist = 220;
+
+                if (dist < maxDist) {
+                    const power = 1 - (dist / maxDist);
+                    const lift = -6 * power;
+                    const scale = 1 + (0.04 * power);
+                    word.style.transform = `translateY(${lift.toFixed(2)}px) scale(${scale.toFixed(3)})`;
+                } else {
+                    word.style.transform = '';
+                }
+            });
+        });
+
+        title.addEventListener('mouseleave', () => {
+            words.forEach(word => {
+                word.style.transform = '';
+            });
+        });
+    });
+
 });

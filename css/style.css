@@ -1007,6 +1007,15 @@ ul {
     background: var(--color-bg-card);
     border-radius: 0 6px 6px 0;
     box-shadow: var(--shadow-card);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-left-color 0.3s ease;
+}
+
+.about-quote-box:hover {
+    transform: translateX(6px) translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+    border-left-color: var(--color-gold-light);
 }
 
 .about-quote {
@@ -1015,6 +1024,11 @@ ul {
     font-weight: 500;
     color: var(--color-text-main);
     line-height: 1.6;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.about-quote-box:hover .about-quote {
+    color: var(--color-gold-hover);
 }
 
 .about-pillars {
@@ -1028,14 +1042,40 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.35s ease;
 }
 
+.pillar-item:hover {
+    transform: translateY(-4px);
+    background-color: var(--color-bg-card);
+}
+
+.pillar-item i {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.pillar-item:hover i {
+    transform: scale(1.2) rotate(6deg);
+    color: var(--color-gold-light);
+}
+
+.pillar-item h4,
 .pillar-item h5 {
     font-size: 0.88rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.pillar-item:hover h4,
+.pillar-item:hover h5 {
+    transform: translateX(3px);
+    color: var(--color-gold);
 }
 
 .pillar-item h5 i { color: var(--color-gold); font-size: 0.8rem; }
@@ -2915,18 +2955,236 @@ ul {
     letter-spacing: -0.01em;
 }
 
-.what-we-do-link-hint {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: color 0.25s ease, transform 0.25s ease;
+.what-we-do-category {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold-light);
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: letter-spacing 0.35s ease, color 0.35s ease;
 }
 
-.what-we-do-card:hover .what-we-do-link-hint {
-    color: var(--color-gold);
-    transform: translateX(4px);
+.what-we-do-card:hover .what-we-do-category {
+    letter-spacing: 0.25em;
+    color: #FFFFFF;
+}
+
+.what-we-do-card-title {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.what-we-do-card:hover .what-we-do-card-title {
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   SEGMENT ARROW PILL BUTTONS (MATCHING REFERENCE IMAGE)
+   ========================================================================== */
+.card-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.1rem;
+    padding: 0.45rem 0.5rem 0.45rem 1.25rem;
+    border-radius: 9999px;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    background: rgba(14, 16, 21, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #FFFFFF !important;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    width: fit-content;
+}
+
+.card-pill-btn .btn-arrow-circle,
+.pill-arrow-btn .btn-arrow-circle,
+.btn-pill .btn-arrow-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #0E0F14;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-pill-btn .btn-arrow-circle svg,
+.pill-arrow-btn .btn-arrow-circle svg,
+.btn-pill .btn-arrow-circle svg {
+    width: 13px;
+    height: 13px;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.what-we-do-card:hover .card-pill-btn {
+    background: #FFFFFF;
+    color: #0A0A0C !important;
+    border-color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.what-we-do-card:hover .card-pill-btn .btn-arrow-circle {
+    background: var(--color-gold);
+    color: #0A0A0C;
+    border-color: var(--color-gold);
+    transform: scale(1.06);
+}
+
+.what-we-do-card:hover .card-pill-btn .btn-arrow-circle svg {
+    transform: translate(2px, -2px);
+}
+
+/* Standalone Segment Arrow Buttons */
+.pill-arrow-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.15rem;
+    padding: 0.5rem 0.55rem 0.5rem 1.45rem;
+    border-radius: 9999px;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-card);
+    width: fit-content;
+}
+
+.pill-arrow-btn.pill-arrow-primary {
+    background: #3CA9E2;
+    color: #FFFFFF !important;
+    border: 1.5px solid #3CA9E2;
+}
+
+.pill-arrow-btn.pill-arrow-primary .btn-arrow-circle {
+    background: #0E0F14;
+    color: #FFFFFF;
+}
+
+.pill-arrow-btn.pill-arrow-primary:hover {
+    background: #2563EB;
+    border-color: #2563EB;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(60, 169, 226, 0.35);
+}
+
+.pill-arrow-btn.pill-arrow-primary:hover .btn-arrow-circle {
+    background: #FFFFFF;
+    color: #0E0F14;
+    transform: scale(1.08);
+}
+
+.pill-arrow-btn.pill-arrow-primary:hover .btn-arrow-circle svg {
+    transform: translate(2px, -2px);
+}
+
+.pill-arrow-btn.pill-arrow-outline {
+    background: var(--color-bg-card);
+    color: var(--color-text-main) !important;
+    border: 1.5px solid var(--border-subtle);
+}
+
+.pill-arrow-btn.pill-arrow-outline .btn-arrow-circle {
+    background: var(--color-text-main);
+    color: var(--color-bg-primary);
+}
+
+.pill-arrow-btn.pill-arrow-outline:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold) !important;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-elevated);
+}
+
+.pill-arrow-btn.pill-arrow-outline:hover .btn-arrow-circle {
+    background: var(--color-gold);
+    color: #0E0F14;
+    transform: scale(1.08);
+}
+
+.pill-arrow-btn.pill-arrow-outline:hover .btn-arrow-circle svg {
+    transform: translate(2px, -2px);
+}
+
+.btn-pill .btn-arrow-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-pill:hover .btn-arrow-circle {
+    background: #FFFFFF;
+    color: #000000;
+    transform: scale(1.08);
+}
+
+.btn-pill:hover .btn-arrow-circle svg {
+    transform: translate(1.5px, -1.5px);
+}
+
+/* ==========================================================================
+   INTERACTIVE HOVER TEXT ANIMATIONS (AS SEEN IN REFERENCE VIDEO)
+   ========================================================================== */
+.interactive-hover-title {
+    display: inline-block;
+    cursor: default;
+}
+
+.interactive-hover-title .anim-word {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                color 0.3s ease, 
+                text-shadow 0.35s ease;
+    will-change: transform;
+}
+
+.interactive-hover-title:hover .anim-word,
+.interactive-hover-title .anim-word:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.interactive-hover-title .anim-word.highlight-gold {
+    background: linear-gradient(135deg, var(--color-gold) 0%, #DFB85C 50%, var(--color-gold) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.interactive-hover-title:hover .anim-word.highlight-gold,
+.interactive-hover-title .anim-word.highlight-gold:hover {
+    background-position: right center;
+    transform: translateY(-5px) scale(1.025);
+    filter: drop-shadow(0 4px 12px rgba(194, 150, 54, 0.25));
 }
 
 .what-we-do-actions {
